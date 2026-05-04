@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+
+  --color-bg-dark: #050608;
+  --color-bg-light: #f0f4f8;
+  --color-primary: #00FFD1;
+  --color-secondary: #0ea5e9;
+  --color-accent: #00FFD1;
+  --color-text-dark: #FFFFFF;
+  --color-text-muted: #94A3B8;
+  --color-text-light: #101217;
+  --color-card-dark: #101217;
+  --color-card-light: #ffffff;
+  --color-border-accent: rgba(0, 255, 209, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-bg-dark text-text-dark;
+  }
+}
+
+@layer components {
+  .topo-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 400 C 50 350, 100 380, 150 400 M 0 350 C 70 300, 120 330, 200 350 M 0 300 C 100 250, 150 280, 250 300 M 0 250 C 150 200, 200 230, 300 250 M 0 200 C 200 150, 250 180, 350 200 M 0 150 C 250 100, 300 130, 400 150 M 50 0 C 100 50, 150 20, 200 0 M 100 0 C 150 70, 200 40, 300 0 M 150 0 C 200 100, 300 70, 400 0' stroke='%2300ffd111' fill='transparent'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .glass-card {
+    @apply bg-white/5 dark:bg-card-dark/80 backdrop-blur-md border border-white/5 dark:border-white/5;
+  }
+  
+  .badge-mono {
+    @apply font-mono text-primary text-[10px] [letter-spacing:3px] border border-primary/20 bg-primary/5 px-3 py-1.5 uppercase;
+  }
+
+  .btn-sophisticated {
+    @apply px-9 py-4 rounded-[2px] font-bold text-[13px] uppercase tracking-wider transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-bg-dark hover:opacity-90;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-white/20 text-white hover:border-white/40;
+  }
+
+  
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem;
+  }
+
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    @apply bg-primary fixed rounded-full pointer-events-none z-[9999];
+  }
+
+  .cursor-ring {
+    width: 30px;
+    height: 30px;
+    @apply border border-primary fixed rounded-full pointer-events-none z-[9998] transition-all duration-150 ease-out;
+  }
+}
