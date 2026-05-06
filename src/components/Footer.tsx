@@ -95,8 +95,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-xs">
-                  Street No. 5, Sector J,<br />
-                  Bahria Enclave, Islamabad, Pakistan
+                  Sector J, Bahria Enclave, <br /> Islamabad, Pakistan
                 </span>
               </li>
             </ul>
