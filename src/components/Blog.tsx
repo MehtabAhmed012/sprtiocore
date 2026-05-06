@@ -99,7 +99,7 @@ export default function Blog() {
                   <div className="absolute top-4 left-4 flex gap-2">
                     {post.isOfficial && (
                       <span className="bg-primary text-[#0a0f1e] text-[10px] font-black px-3 py-1 rounded-full uppercase">
-                        Official
+                        Services
                       </span>
                     )}
                     <span className="bg-bg-base/80 backdrop-blur-md text-primary font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase border border-primary/20">

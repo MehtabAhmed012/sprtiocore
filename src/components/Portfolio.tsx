@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { PORTFOLIO } from '../constants';
+import { PORTFOLIO } from '../constants/constants';
 import { ExternalLink } from 'lucide-react';
 
 const categories = ['All', 'Flood Mapping', 'LULC', 'Mangrove', 'Geology', 'Health GIS'];
@@ -89,9 +89,9 @@ export default function Portfolio() {
                         ))}
                       </div>
                       <h3 className="font-display text-xl font-bold mb-4 text-white">{project.title}</h3>
-                      <button className="flex items-center gap-2 text-primary font-bold text-sm">
+                      {/*<button className="flex items-center gap-2 text-primary font-bold text-sm">
                         View Project <ExternalLink size={16} />
-                      </button>
+                      </button> */}
                    </div>
                 </div>
                 

@@ -139,7 +139,7 @@ export default function Footer() {
            <div className="flex gap-8 items-center">
               <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-              {user ? (
+              { /* user ? (
                 <div className="flex gap-4 items-center">
                   <Link 
                     to="/admin" 
@@ -161,7 +161,7 @@ export default function Footer() {
                 >
                   <ShieldCheck size={14} /> Admin Access
                 </button>
-              )}
+              ) */}
            </div>
         </div>
       </div>

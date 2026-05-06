@@ -72,7 +72,7 @@ export const PORTFOLIO = [
     title: '01 — Flood Hazard Mapping, Indus Basin', 
     tags: ['SAR', 'GEE', 'ArcGIS'], 
     category: 'Flood Mapping', 
-    image: 'https://images.unsplash.com/photo-1547476062-7e4d2d5c1b3e?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRX8KmMxu5ULcLdE2QzMVox_zhOxBz1WLKeg&s',
     description: 'Multi-temporal SAR analysis to map inundation extents with cloud-penetrating precision. Output included flood depth estimates and at-risk population layers.'
   },
   { 
@@ -80,7 +80,7 @@ export const PORTFOLIO = [
     title: '02 — Mangrove Change Detection, Coastal Zone', 
     tags: ['LULC', 'ENVI', 'GEE'], 
     category: 'Mangrove', 
-    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGk3PSbBZG2AHlfj1tKWioIghsa2TwTtWfww&s',
     description: 'Long-term mangrove monitoring using spectral indices and supervised classification to quantify ecosystem loss and flag priority restoration zones.'
   },
   { 
@@ -88,7 +88,7 @@ export const PORTFOLIO = [
     title: '03 — Landslide Susceptibility Mapping', 
     tags: ['GIS', 'ArcGIS', 'QGIS'], 
     category: 'Geology', 
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6nKdKHw4Q9Lozgce-u8xetEei6vTSAk0vA&s',
     description: 'Weighted overlay and frequency ratio methods applied to slope, aspect, soil type, and land cover data to produce 5-class susceptibility maps.'
   },
   { 
@@ -96,7 +96,7 @@ export const PORTFOLIO = [
     title: '04 — Disease Outbreak Risk Mapping', 
     tags: ['Health GIS', 'ArcGIS', 'Python'], 
     category: 'Health GIS', 
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDm0EwqNi7ampNMWOMFBoxskOjFTSQwyWRpg&s',
     description: 'Integrated spatial analysis of environmental determinants and population vulnerability to produce dengue risk hotspot maps for resource allocation.'
   },
   { 
@@ -104,7 +104,7 @@ export const PORTFOLIO = [
     title: '05 — Urban LULC & Heat Island Analysis', 
     tags: ['Sentinel-2', 'LST', 'ENVI'], 
     category: 'LULC', 
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Q372sa6r4LtQaUGO54DFVcKm4bbUdMRosQ&s',
     description: 'Supervised classification and NDVI/LST correlation analysis to quantify urban heat island intensity and inform green infrastructure planning.'
   },
   { 
@@ -112,7 +112,7 @@ export const PORTFOLIO = [
     title: '06 — Groundwater Potential Zone Mapping', 
     tags: ['Geology', 'GIS', 'QGIS'], 
     category: 'Geology', 
-    image: 'https://images.unsplash.com/photo-1502472584811-0a2f2feb8968?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj_EnJ_x2_pKFHlwbMpQI1RnntJoaATFYVg&s',
     description: 'Multi-layer GIS integration to identify high-priority groundwater recharge zones, supporting borehole siting and rural water supply planning.'
   },
 ];

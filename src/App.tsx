@@ -39,7 +39,7 @@ function MainLandingPage({ onOpenQuote }: { onOpenQuote: () => void }) {
       <Portfolio />
       <Sectors />
       <WhyChooseUs />
-      // <Team />
+      {/* <Team /> */}
       <Contact />
     </>
   );

@@ -1,4 +1,4 @@
-import { LOGOS } from '../constants';
+import { LOGOS } from '../constants/constants';
 
 export default function Tools() {
   return (

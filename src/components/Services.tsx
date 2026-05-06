@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SERVICES } from '../constants';
+import { SERVICES } from '../constants/constants';
 import { ArrowUpRight, Map, Satellite, Leaf, Mountain, HeartPulse, ShieldAlert } from 'lucide-react';
 
 const icons:Record<string, any> = {

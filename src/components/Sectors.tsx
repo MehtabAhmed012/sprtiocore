@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { INDUSTRIES } from '../constants';
+import { INDUSTRIES } from '../constants/constants';
 
 export default function Sectors() {
   return (

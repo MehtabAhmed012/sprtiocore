@@ -95,7 +95,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-display font-medium text-lg text-primary">Ground Coordinates</h4>
                   <p className="text-text-base/60 leading-relaxed">
-                    Street No. 5, Sector J,<br />
+                    House No. 21, Street No. 5, Sector J,<br />
                     Bahria Enclave, Islamabad, Pakistan
                   </p>
                 </div>
@@ -106,10 +106,10 @@ export default function Contact() {
               <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Linkedin /></a>
               <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Mail /></a>
             </div>
-            
+            {/*
             <div className="mt-12 rounded-3xl overflow-hidden border border-white/10 group aspect-video">
                <iframe 
-                src="https://maps.app.goo.gl/Fq2AfnLxaLBhFygB8" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.3013898144675!2d73.18956907575306!3d33.67528377330232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95267b14d5e9%3A0xe13ca24d8f8d6899!2sSector%20J%20%40%20Bahria%20Enclave!5e0!3m2!1sen!2s!4v1714995000000!5m2!1sen!2s" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -118,7 +118,7 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale invert contrast-125 opacity-70 group-hover:grayscale-0 group-hover:invert-0 group-hover:opacity-100 transition-all duration-700"
               />
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Form */}

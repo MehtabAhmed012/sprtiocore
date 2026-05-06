@@ -40,7 +40,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "Discover how SpatioCore Tech's GIS and spatial analysis services transform raw location data into strategic maps, risk assessments, and planning tools.",
     content: "In a world where every decision has a location, GIS isn't just a technical tool — it's a strategic advantage. At SpatioCore Tech, we turn coordinates into clarity.\n\nGeographic Information Systems (GIS) is the science of capturing, storing, analyzing, and visualizing spatial and geographic data. It connects the 'where' to the 'what' — enabling organizations to see patterns, relationships, and trends that are invisible in spreadsheets and reports.\n\nThe Asia-Pacific GIS market alone is growing at over 15% annually, driven by infrastructure development, climate adaptation planning, and smart city initiatives — markets SpatioCore Tech is strategically positioned to serve.\n\nWe are not just GIS technicians — we are spatial problem-solvers. Every map we produce is designed to answer a specific question, support a specific decision, or tell a specific story.",
     category: "GIS Services",
-    image: "https://images.unsplash.com/photo-1547476062-7e4d2d5c1b3e?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images q=tbn:ANd9GcRsz9L8KMKSqFrvaknW2v6XZNqbb-nK9m-mCA&s",
     author: "SpatioCore Team",
     stats: [
       { value: "$14.5B", label: "Global GIS Market (2024)" },
@@ -73,7 +73,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "SpatioCore Tech's remote sensing services process multispectral and SAR satellite imagery to deliver vegetation monitoring, change detection, and land surface analysis.",
     content: "Satellites orbit 700 kilometers above Earth, collecting data that no ground team could ever gather at that scale or speed. At SpatioCore Tech, we turn that raw orbital data into ground-level intelligence.\n\nGoogle Earth Engine alone processes over one petabyte of satellite data daily. The bottleneck is not data availability — it is the analytical expertise to extract meaning. That is precisely where SpatioCore Tech adds value.\n\nMany analysts can run a classification — few can interpret what the results mean for your specific context, validate them against field data, and package them as decision-ready outputs.",
     category: "Remote Sensing",
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEIQC0RFQNBJlEW_nLcb-aNkwHUr_4h9q5yA&s",
     author: "Orbital Ops",
     stats: [
       { value: "$22B+", label: "Remote Sensing Market 2024" },
@@ -104,7 +104,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "SpatioCore Tech integrates GIS and remote sensing into environmental consulting — delivering EIA mapping, watershed studies, carbon stock analysis, and climate vulnerability assessments.",
     content: "The environment doesn't respect administrative boundaries. Neither does our analysis. SpatioCore Tech brings the full power of spatial technology to environmental problem-solving.\n\nA properly executed environmental GIS analysis can be the difference between a project approval and a rejection. SpatioCore Tech outputs are built to withstand regulatory scrutiny and scientific peer review.",
     category: "Environmental Services",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    image: "https://media.licdn.com/dms/image/v2/D5612AQH4Z2yHieGuCQ/article-cover_image-shrink_720_1280/B56ZWkfCeNGUAM-/0/1742221357065?e=2147483647&v=beta&t=y2UP2mmnuQsOHU6SVD26prIDetZOLrwgdYz2bYjeTYg",
     author: "Eco Division",
     stats: [
       { value: "$44B",  label: "Environmental Consulting Market" },
@@ -134,7 +134,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "SpatioCore Tech delivers DEM analysis, landslide susceptibility mapping, groundwater potential studies, and geological terrain mapping for mining, engineering, and hazard management projects.",
     content: "Every building, road, dam, and mine exists on geology. Understanding that geology spatially — its structure, its hazards, its resources — is what separates safe, efficient projects from costly failures.\n\nWe combine geological domain knowledge with geospatial technical expertise — ensuring terrain and geological maps are not just spatially accurate but geologically meaningful.",
     category: "Geology & Terrain",
-    image: "https://images.unsplash.com/photo-1518112391480-9812405021aa?w=800",
+    image: "https://innoter.com/upload/iblock/3ba/2_cmr.jpg",
     author: "Terra Team",
     stats: [
       { value: "$8.2B",  label: "Geo-Hazard Risk Market" },
@@ -163,7 +163,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "SpatioCore Tech delivers spatial epidemiology, disease risk mapping, healthcare access analysis, and industrial safety GIS — turning health and safety data into life-saving spatial intelligence.",
     content: "Disease doesn't spread uniformly. Hazards don't affect everyone equally. Emergencies don't unfold in a vacuum. Geography is at the heart of every health and safety challenge — and GIS is the key to solving them.\n\nHealth and safety GIS directs ambulances to the right neighborhoods, ensures vaccines reach hardest-to-access populations, and tells factory managers exactly which communities are exposed to their emissions.",
     category: "Health & Safety GIS",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
+    image: "https://sambusgeospatial.com/wp-content/uploads/2021/07/GIS-for-Safety-and-Security-FI-1024x576.jpg",
     author: "Health Intel",
     stats: [
       { value: "$7.4B", label: "Health GIS Market 2024" },
@@ -192,7 +192,7 @@ export const OFFICIAL_BLOG_POSTS: BlogPost[] = [
     excerpt: "SpatioCore Tech delivers applied GIS and remote sensing solutions across agriculture, disaster management, urban planning, forestry, coastal management, mining, and transportation sectors.",
     content: "Every industry has a geography problem. SpatioCore Tech has a proven spatial solution. Our applied sector practice tailors core GIS and remote sensing capabilities to the specific workflows, regulations, and decisions of each industry.\n\nRegardless of sector, every project is underpinned by spatial precision, scientific integrity, and outputs that genuinely support better decisions. We are not a generic mapping shop — we are your specialist geospatial partner.",
     category: "Applied Sector Solutions",
-    image: "https://images.unsplash.com/photo-1504233529578-6d46baba6d34?w=800",
+    image: "https://i0.wp.com/gis-university.com/wp-content/uploads/2015/05/image4.png?ssl=1",
     author: "Solutions Architect",
     stats: [
       { value: "$3.5B", label: "Precision Ag Market 2024" },
