@@ -69,7 +69,8 @@ export default function Hero({ onOpenQuote }: HeroProps) {
             transition={{ delay: 0.4 }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.95] tracking-[-3px] text-text-base"
           >
-            Where Earth Data Meets Smart Solutions — <span className="text-primary">GIS & Remote Sensing Experts</span>
+            Decode the Earth <span className="text-primary"> Design the Future </span>
+            {/* Where Earth Data Meets Smart Solutions — <span className="text-primary">GIS & Remote Sensing Experts</span> */}
           </motion.h1>
           
           <motion.p 
@@ -78,7 +79,7 @@ export default function Hero({ onOpenQuote }: HeroProps) {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mb-12"
           >
-            SpatioCore Tech delivers precision GIS mapping, satellite image processing, environmental impact analysis, geological terrain studies, and health safety spatial services — transforming raw earth data into strategic, decision-ready intelligence for organizations worldwide.
+            SpatioCore Tech delivers precision GIS mapping, satellite image processing, environmental impact analysis, geological terrain studies, and health safety spatial services transforming raw earth data into strategic, decision-ready intelligence for organizations worldwide.
           </motion.p>
           
           <motion.div 

@@ -26,7 +26,7 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-                Projects That Define Our Precision — <span className="text-primary">Real Solutions, Real Impact</span>
+                Projects That Define Our Precision <span className="text-primary">Real Solutions, Real Impact</span>
               </h2>
               <p className="text-lg text-text-muted leading-relaxed">
                 Each project at SpatioCore Tech begins with a clear problem and ends with spatial intelligence that drives action. Explore our portfolio of GIS, remote sensing, and environmental mapping work across diverse geographies and sectors.

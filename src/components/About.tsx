@@ -62,7 +62,7 @@ export default function About() {
             [ WHO WE ARE ]
           </span>
           <h2 className="font-display text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-[-1px]">
-            Precision. Integrity. Spatial Intelligence — <span className="text-primary">Built for the Real World.</span>
+            Precision. Integrity. Spatial Intelligence <span className="text-primary">Built for the Real World.</span>
           </h2>
           <div className="space-y-6 mb-10">
             <p className="text-lg text-text-muted leading-relaxed">

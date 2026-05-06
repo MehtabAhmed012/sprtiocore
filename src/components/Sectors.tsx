@@ -26,7 +26,7 @@ export default function Sectors() {
             transition={{ delay: 0.2 }}
             className="text-lg text-text-muted leading-relaxed"
           >
-            From agriculture fields to disaster relief zones, from mining sites to city halls — SpatioCore Tech's geospatial solutions operate wherever spatial awareness translates into better outcomes.
+            From agriculture fields to disaster relief zones, from mining sites to city halls SpatioCore Tech's geospatial solutions operate wherever spatial awareness translates into better outcomes.
           </motion.p>
         </div>
 
