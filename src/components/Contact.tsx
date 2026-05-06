@@ -96,8 +96,7 @@ export default function Contact() {
                   <h4 className="font-display font-medium text-lg text-primary">Ground Coordinates</h4>
                   <p className="text-text-base/60 leading-relaxed">
                     
-                    Street No. 5, Sector J,<br />
-                    Bahria Enclave, Islamabad, Pakistan
+                    Sector J, Bahria Enclave, <br /> Islamabad, Pakistan
                   </p>
                 </div>
               </div>
