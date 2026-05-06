@@ -34,7 +34,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 bg-primary/5 dark:bg-bg-dark/80 relative">
+    <section className="py-24 bg-primary/5 dark:bg-bg-base/80 relative">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="inline-flex p-4 bg-primary text-bg-dark rounded-2xl mb-8 shadow-[0_10px_25px_rgba(0,201,167,0.3)]">
           <Quote size={32} />
@@ -50,12 +50,12 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               className="absolute inset-0"
             >
-              <p className="text-xl md:text-3xl font-medium italic mb-10 leading-relaxed text-text-light dark:text-text-dark">
+              <p className="text-xl md:text-3xl font-medium italic mb-10 leading-relaxed text-text-light dark:text-text-base">
                 "{testimonials[index].text}"
               </p>
               <div>
                 <h4 className="font-display font-bold text-lg">{testimonials[index].author}</h4>
-                <p className="text-text-light/50 dark:text-text-dark/50 text-sm">
+                <p className="text-text-light/50 dark:text-text-base/50 text-sm">
                   {testimonials[index].org} {testimonials[index].flag}
                 </p>
               </div>

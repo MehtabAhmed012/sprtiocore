@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { SERVICES } from '../constants';
 import { ArrowUpRight, Map, Satellite, Leaf, Mountain, HeartPulse, ShieldAlert } from 'lucide-react';
 
-const icons: Record<string, any> = {
-  'GIS Services': <Map />,
+const icons:Record<string, any> = {
+  'GIS & Spatial Analysis': <Map />,
   'Remote Sensing': <Satellite />,
   'Environmental': <Leaf />,
   'Geology & Terrain': <Mountain />,
-  'Health & Safety': <ShieldAlert />,
-  'Applied / Sector': <HeartPulse />,
+  'Health & Safety GIS': <ShieldAlert />,
+  'Applied Sectors': <HeartPulse />,
 };
 
 export default function Services() {
@@ -20,21 +20,29 @@ export default function Services() {
   return (
     <section id="services" className="py-24 relative topo-bg">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="font-mono text-primary text-sm font-semibold tracking-widest mb-4 block"
+            className="badge-mono mb-6 inline-block"
           >
-            [ OUR SERVICES ]
+            [ CORE OFFERING ]
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="font-display text-4xl md:text-5xl font-black mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight"
           >
-            Geospatial <span className="text-primary">Capabilities</span>
+            End-to-End Geospatial Services — <span className="text-primary">From Satellite to Street Level</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-text-muted leading-relaxed"
+          >
+            Whether you need land use mapping, environmental impact assessment, geological hazard analysis, or health GIS solutions — SpatioCore Tech delivers measurable results with tools trusted by governments, researchers, and industry leaders worldwide.
+          </motion.p>
         </div>
 
         {/* Tabs */}
@@ -70,12 +78,12 @@ export default function Services() {
                   {icons[activeCategory.category] || <Map />}
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4 group-hover:text-primary transition-colors">{item.name}</h3>
-                <p className="text-text-light/70 dark:text-text-dark/70 text-sm mb-6 leading-relaxed">
+                <p className="text-text-light/70 dark:text-text-base/70 text-sm mb-6 leading-relaxed">
                   {item.description}
                 </p>
-                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn More <ArrowUpRight size={14} />
-                </div>
+                <a href="#blog" className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                  View Case Study <ArrowUpRight size={14} />
+                </a>
               </motion.div>
             ))}
           </AnimatePresence>

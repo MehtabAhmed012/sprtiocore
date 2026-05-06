@@ -5,21 +5,29 @@ export default function Sectors() {
   return (
     <section id="industries" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="badge-mono mb-4 inline-block"
+            className="badge-mono mb-6 inline-block"
           >
-            [ INDUSTRIES / SECTORS ]
+            [ MARKET BREADTH ]
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="font-display text-4xl md:text-6xl font-black mb-6 leading-tight tracking-[-1px]"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight tracking-[-1px]"
           >
-            Impacting Every <span className="text-primary">Environment</span>
+            Geospatial Intelligence Across Every <span className="text-primary">Sector That Touches the Earth</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-text-muted leading-relaxed"
+          >
+            From agriculture fields to disaster relief zones, from mining sites to city halls — SpatioCore Tech's geospatial solutions operate wherever spatial awareness translates into better outcomes.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
@@ -43,8 +51,8 @@ export default function Sectors() {
               <h3 className="font-display text-lg font-bold mb-3 group-hover:text-primary transition-colors">
                 {industry.name}
               </h3>
-              <p className="text-sm text-text-muted group-hover:text-text-dark transition-colors font-medium">
-                Advanced spatial analytics tailored for {industry.name.toLowerCase()} demands.
+              <p className="text-sm text-text-muted group-hover:text-text-base transition-colors font-medium leading-relaxed">
+                {industry.description}
               </p>
             </motion.div>
           ))}

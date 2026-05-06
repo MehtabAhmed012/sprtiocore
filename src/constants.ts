@@ -6,73 +6,131 @@
 export const SERVICES = [
   {
     id: 'gis',
-    category: 'GIS Services',
+    category: 'GIS & Spatial Analysis',
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800',
     items: [
-      { name: 'Web GIS Development', description: 'Interactive maps and spatial dashboards for data visualization.' },
-      { name: 'Spatial Analysis', description: 'Advanced processing of spatial datasets for insights.' },
-      { name: 'Database Management', description: 'Enterprise-grade PostGIS and ArcGIS Online management.' }
+      { name: 'GIS & Spatial Analysis', description: 'Custom mapping, geodatabase design, land use planning, flood zonation, network analysis, and web GIS dashboards that make spatial data accessible to decision-makers at every level.' },
+      { name: 'Geodatabase Design', description: 'Enterprise-grade spatial database architecture and management.' },
+      { name: 'Spatial Dashboards', description: 'Interactive visualization tools for real-time geographic data.' }
     ]
   },
   {
-    id: 'rs',
+    id: 'remote',
     category: 'Remote Sensing',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
     items: [
-      { name: 'Satellite Imagery Analysis', description: 'Multi-spectral and hyper-spectral processing.' },
-      { name: 'LULC Classification', description: 'Land use and land cover change detection.' },
-      { name: 'SAR Processing', description: 'Radar-based mapping for all-weather monitoring.' }
+      { name: 'Remote Sensing & Image Processing', description: 'Multispectral image classification, SAR processing, vegetation index analysis (NDVI/EVI), change detection, and satellite-based land surface monitoring at scale using Google Earth Engine and ENVI.' },
+      { name: 'SAR Processing', description: 'Radar-based mapping for all-weather, clouds-penetrating monitoring.' },
+      { name: 'Vegetation Indexing', description: 'NDVI and EVI analysis for crop and forest health tracking.' }
     ]
   },
   {
     id: 'env',
     category: 'Environmental',
+    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=800',
     items: [
-      { name: 'EIA Studies', description: 'Comprehensive environmental impact assessments.' },
-      { name: 'Flood Hazard Mapping', description: 'Hydrological modeling and risk zone delineation.' },
-      { name: 'Mangrove Monitoring', description: 'Coastal ecosystem health and carbon sequestration tracking.' }
+      { name: 'Environmental Consulting', description: 'Watershed analysis, EIA mapping, carbon stock estimation, biodiversity habitat studies, climate vulnerability mapping, and erosion assessment for sustainable development planning.' },
+      { name: 'EIA Mapping', description: 'Mapping for Environmental Impact Assessments and regulatory compliance.' },
+      { name: 'Carbon Monitoring', description: 'Biomass estimation and carbon sequestration tracking.' }
     ]
   },
   {
-    id: 'geo',
+    id: 'geology',
     category: 'Geology & Terrain',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
     items: [
-      { name: 'Terrain Modeling', description: 'High-resolution DEM/DSM generation and analysis.' },
-      { name: 'Landslide Mapping', description: 'Stability analysis and hazard identification.' },
-      { name: 'Borehole Visualization', description: '3D geological modeling of subsurface data.' }
+      { name: 'Geology & Terrain Analysis', description: 'DEM analysis, slope/aspect mapping, landslide susceptibility, groundwater potential zones, fault lineament extraction, and mineral prospectivity studies for earth science applications.' },
+      { name: 'Landslide Hazard', description: 'Slope stability analysis and susceptibility zonation.' },
+      { name: 'Mineral Prospecting', description: 'Geological feature extraction for resource exploration.' }
     ]
   },
   {
-    id: 'hs',
-    category: 'Health & Safety',
+    id: 'health',
+    category: 'Health & Safety GIS',
+    image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=800',
     items: [
-      { name: 'Epidemiological GIS', description: 'Mapping disease spread and healthcare access.' },
-      { name: 'Safety Audits', description: 'Spatial auditing for industrial compliance.' },
-      { name: 'Location Analytics', description: 'Healthcare facility siting and optimization.' }
+      { name: 'Health & Safety GIS', description: 'Disease outbreak mapping, vector-borne risk zones, healthcare facility coverage, industrial hazard delineation, evacuation route planning, and post-disaster damage assessment for public safety.' },
+      { name: 'Industrial Risks', description: 'Spatial auditing for workplace safety and hazard mitigation.' },
+      { name: 'Evacuation Planning', description: 'Dynamic routing and spatial modeling for emergency response.' }
+    ]
+  },
+  {
+    id: 'applied',
+    category: 'Applied Sectors',
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800',
+    items: [
+      { name: 'Applied Sector Solutions', description: 'Tailored GIS and remote sensing solutions for agriculture, disaster management, urban planning, forestry, coastal monitoring, mining operations, and transportation network analysis.' },
+      { name: 'Urban Planning', description: 'Smart city zoning, utility mapping, and demographic analysis.' },
+      { name: 'Disaster Relief', description: 'Post-disaster recovery mapping and damage assessment.' }
     ]
   }
 ];
 
 export const PORTFOLIO = [
-  { id: 1, title: 'Regional Flood Risk Model', tags: ['SAR', 'ArcGIS'], category: 'Flood Mapping', image: 'https://picsum.photos/seed/flood/600/400' },
-  { id: 2, title: 'Urban Growth Analysis', tags: ['Landsat', 'QGIS'], category: 'LULC', image: 'https://picsum.photos/seed/urban/600/400' },
-  { id: 3, title: 'Coastal Mangrove Census', tags: ['Sentinel-2', 'GEE'], category: 'Mangrove', image: 'https://picsum.photos/seed/mangrove/600/400' },
-  { id: 4, title: 'Minable Area Detection', tags: ['Planet', 'ENVI'], category: 'Geology', image: 'https://picsum.photos/seed/mining/600/400' },
-  { id: 5, title: 'Public Health Dashboard', tags: ['React', 'D3'], category: 'Health GIS', image: 'https://picsum.photos/seed/health/600/400' },
-  { id: 6, title: 'Terrain Stability Study', tags: ['LiDAR', 'ArcPro'], category: 'Geology', image: 'https://picsum.photos/seed/terrain/600/400' },
+  { 
+    id: 1, 
+    title: '01 — Flood Hazard Mapping, Indus Basin', 
+    tags: ['SAR', 'GEE', 'ArcGIS'], 
+    category: 'Flood Mapping', 
+    image: 'https://images.unsplash.com/photo-1547476062-7e4d2d5c1b3e?w=800',
+    description: 'Multi-temporal SAR analysis to map inundation extents with cloud-penetrating precision. Output included flood depth estimates and at-risk population layers.'
+  },
+  { 
+    id: 2, 
+    title: '02 — Mangrove Change Detection, Coastal Zone', 
+    tags: ['LULC', 'ENVI', 'GEE'], 
+    category: 'Mangrove', 
+    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800',
+    description: 'Long-term mangrove monitoring using spectral indices and supervised classification to quantify ecosystem loss and flag priority restoration zones.'
+  },
+  { 
+    id: 3, 
+    title: '03 — Landslide Susceptibility Mapping', 
+    tags: ['GIS', 'ArcGIS', 'QGIS'], 
+    category: 'Geology', 
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800',
+    description: 'Weighted overlay and frequency ratio methods applied to slope, aspect, soil type, and land cover data to produce 5-class susceptibility maps.'
+  },
+  { 
+    id: 4, 
+    title: '04 — Disease Outbreak Risk Mapping', 
+    tags: ['Health GIS', 'ArcGIS', 'Python'], 
+    category: 'Health GIS', 
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800',
+    description: 'Integrated spatial analysis of environmental determinants and population vulnerability to produce dengue risk hotspot maps for resource allocation.'
+  },
+  { 
+    id: 5, 
+    title: '05 — Urban LULC & Heat Island Analysis', 
+    tags: ['Sentinel-2', 'LST', 'ENVI'], 
+    category: 'LULC', 
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800',
+    description: 'Supervised classification and NDVI/LST correlation analysis to quantify urban heat island intensity and inform green infrastructure planning.'
+  },
+  { 
+    id: 6, 
+    title: '06 — Groundwater Potential Zone Mapping', 
+    tags: ['Geology', 'GIS', 'QGIS'], 
+    category: 'Geology', 
+    image: 'https://images.unsplash.com/photo-1502472584811-0a2f2feb8968?w=800',
+    description: 'Multi-layer GIS integration to identify high-priority groundwater recharge zones, supporting borehole siting and rural water supply planning.'
+  },
 ];
 
 export const INDUSTRIES = [
-  { name: 'Agriculture', icon: '🌾' },
-  { name: 'Disaster Management', icon: '🚨' },
-  { name: 'Urban Planning', icon: '🏙️' },
-  { name: 'Forestry', icon: '🌲' },
-  { name: 'Coastal Management', icon: '🌊' },
-  { name: 'Mining', icon: '⛏️' },
-  { name: 'Transportation', icon: '🚀' },
-  { name: 'Public Health', icon: '🏥' },
-  { name: 'Environmental Conservation', icon: '🌿' },
+  { name: 'Agriculture', icon: '🌾', description: 'Crop health monitoring, irrigation planning, soil classification, and yield estimation using multispectral indices.' },
+  { name: 'Disaster Management', icon: '🚨', description: 'Rapid damage assessment, flood extent mapping, evacuation route analysis, and shelter site selection.' },
+  { name: 'Urban Planning', icon: '🏙️', description: 'Smart city mapping, zoning analysis, infrastructure planning, and urban expansion monitoring.' },
+  { name: 'Forestry', icon: '🌲', description: 'Forest inventory mapping, canopy cover analysis, biomass estimation, and deforestation monitoring.' },
+  { name: 'Coastal Management', icon: '🌊', description: 'Shoreline change analysis, mangrove mapping, reef monitoring, and coastal hazard assessment.' },
+  { name: 'Mining', icon: '⛏️', description: 'Pit mapping, overburden volume estimation, resource corridor analysis, and environmental impact monitoring.' },
+  { name: 'Transportation', icon: '🚀', description: 'Road network analysis, route optimization, bridge and infrastructure condition mapping.' },
+  { name: 'Public Health', icon: '🏥', description: 'Disease risk mapping, healthcare facility accessibility, epidemic spatial modeling, and health equity analysis.' },
+  { name: 'Environment & Conservation', icon: '🌿', description: 'Biodiversity habitat mapping, protected area analysis, carbon sequestration studies, and ecosystem health monitoring.' },
 ];
 
 export const LOGOS = [
-  'ArcGIS', 'QGIS', 'Google Earth Engine', 'ENVI', 'ERDAS', 'AutoCAD', 
-  'Python', 'R', 'SAR', 'Landsat', 'Sentinel', 'DJI Drone', 'GPS', 'PostGIS'
+  'ArcGIS Pro', 'QGIS', 'Google Earth Engine', 'ENVI', 'ERDAS IMAGINE', 'Python', 
+  'R', 'PostGIS', 'Sentinel Hub', 'Landsat Archive', 'SAR / Sentinel-1', 'SNAP Toolbox', 
+  'DJI Drone', 'AutoCAD Map', 'Global Mapper', 'QGIS Atlas'
 ];

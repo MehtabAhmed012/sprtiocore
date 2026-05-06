@@ -4,20 +4,20 @@ import { Linkedin, Mail } from 'lucide-react';
 const team = [
   { 
     name: 'Dr. Sarah Chen', 
-    role: 'Lead Geospatial Scientist', 
-    bio: '15+ years in Remote Sensing and environmental modelling.',
+    role: 'Principal RS Scientist', 
+    bio: 'PhD in Earth Observation. Former NASA collaborator with 15+ years experience in multi-sensor data fusion and carbon sequestration modeling.',
     img: 'https://i.pravatar.cc/300?u=sarah' 
   },
   { 
     name: 'Marcus Thorne', 
-    role: 'Principal GIS Architect', 
-    bio: 'Expert in enterprise GIS infrastructures and automation.',
+    role: 'Lead GIS Architect', 
+    bio: 'Certified Esri professional specialized in deploying high-availability Enterprise GIS infrastructures and custom Python-based automation workflows.',
     img: 'https://i.pravatar.cc/300?u=marcus' 
   },
   { 
     name: 'Elena Rodriguez', 
-    role: 'Environmental Analyst', 
-    bio: 'Specialist in hydrological risk assessment and conservation.',
+    role: 'Geological Engineer', 
+    bio: 'Expert in 3D subsurface modeling and slope stability. Leading our geological risk assessment division for international large-scale infrastructure projects.',
     img: 'https://i.pravatar.cc/300?u=elena' 
   },
 ];
@@ -56,8 +56,12 @@ export default function Team() {
                 {/* Front */}
                 <div className="absolute inset-0 [backface-visibility:hidden]">
                   <div className="h-full bg-white/5 dark:bg-card-dark border border-white/10 rounded-3xl overflow-hidden flex flex-col p-8">
-                    <div className="aspect-square w-32 mx-auto rounded-full overflow-hidden border-2 border-primary mb-6">
-                      <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                    <div className="aspect-square w-32 mx-auto rounded-full overflow-hidden border-2 border-primary mb-6 flex items-center justify-center bg-primary/10">
+                      {member.img && member.img.trim() ? (
+                        <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                      ) : (
+                        <span className="text-primary font-bold font-display uppercase text-xs">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                      )}
                     </div>
                     <div className="text-center mt-auto">
                       <h3 className="font-display text-xl font-bold mb-2">{member.name}</h3>
@@ -74,8 +78,8 @@ export default function Team() {
                       "{member.bio}"
                     </p>
                     <div className="flex justify-center gap-4 mt-auto">
-                      <a href="#" className="p-3 bg-bg-dark text-white rounded-full hover:scale-110 transition-transform"><Linkedin size={20} /></a>
-                      <a href="#" className="p-3 bg-bg-dark text-white rounded-full hover:scale-110 transition-transform"><Mail size={20} /></a>
+                      <a href="#" className="p-3 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Linkedin size={20} /></a>
+                      <a href="#" className="p-3 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Mail size={20} /></a>
                     </div>
                   </div>
                 </div>

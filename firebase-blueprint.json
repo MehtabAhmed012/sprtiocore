@@ -1,0 +1,90 @@
+{
+  "entities": {
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "Records from the contact form",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "service": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "email", "service", "message", "createdAt"]
+    },
+    "QuoteRequest": {
+      "title": "Quote Request",
+      "description": "Requests for service quotes",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "projectType": { "type": "string" },
+        "details": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "email", "projectType", "details", "createdAt"]
+    },
+    "Subscription": {
+      "title": "Subscription",
+      "description": "Newsletter subscription email",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "BlogPost": {
+      "title": "Blog Post",
+      "description": "Article published on the platform",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "author": { "type": "string" },
+        "date": { "type": "string" },
+        "isOfficial": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["draft", "published"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "excerpt", "content", "category", "status", "createdAt"]
+    },
+    "UserRole": {
+      "title": "User Role",
+      "description": "Permissions for a user",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["admin", "editor"] }
+      },
+      "required": ["role"]
+    }
+  },
+  "firestore": {
+    "/inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "General inquiries from users"
+    },
+    "/quotes/{quoteId}": {
+      "schema": "QuoteRequest",
+      "description": "Specific project quote requests"
+    },
+    "/subscriptions/{subId}": {
+      "schema": "Subscription",
+      "description": "Newsletter subscriptions"
+    },
+    "/blog_posts/{postId}": {
+      "schema": "BlogPost",
+      "description": "Public blog articles"
+    },
+    "/roles/{userId}": {
+      "schema": "UserRole",
+      "description": "User permission mapping"
+    }
+  }
+}

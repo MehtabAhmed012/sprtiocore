@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isBootstrapAdmin() {
+      return isSignedIn() && request.auth.token.email == 'mehtabahmed.isb@gmail.com';
+    }
+
+    function hasRole(role) {
+      return isSignedIn() && 
+             exists(/databases/$(database)/documents/roles/$(request.auth.uid)) && 
+             get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == role;
+    }
+
+    function isAdmin() {
+      return isBootstrapAdmin() || hasRole('admin');
+    }
+
+    function isEditor() {
+      return isAdmin() || hasRole('editor');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // Inquiries, Quotes, Subscriptions
+    match /inquiries/{id} {
+      allow create: if true; // Basic pass for now to ensure app works, will harden after compile fix
+      allow read: if isAdmin();
+    }
+    match /quotes/{id} {
+      allow create: if true;
+      allow read: if isAdmin();
+    }
+    match /subscriptions/{id} {
+      allow create: if true;
+      allow read: if isAdmin();
+    }
+
+    // Blog Posts
+    match /blog_posts/{id} {
+      allow read: if true;
+      allow create, update, delete: if isEditor();
+    }
+
+    // Roles
+    match /roles/{userId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow write: if isAdmin();
+    }
+  }
+}
