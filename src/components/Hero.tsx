@@ -79,7 +79,7 @@ export default function Hero({ onOpenQuote }: HeroProps) {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mb-12"
           >
-            SpatioCore Tech delivers precision GIS mapping, satellite image processing, environmental impact analysis, geological terrain studies, and health safety spatial services transforming raw earth data into strategic, decision-ready intelligence for organizations worldwide.
+            SpatioCore Tech delivers precision GIS mapping, satellite image processing, environmental impact analysis, geological terrain studies, and health safety spatial services transforming raw earth data into strategic, decision ready intelligence for organizations worldwide.
           </motion.p>
           
           <motion.div 

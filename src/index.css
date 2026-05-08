@@ -87,7 +87,7 @@
     justify-content: space-around;
     min-width: 100%;
     gap: 2rem;
-    animation: scroll 30s linear infinite;
+    animation: scroll 50s linear infinite;
   }
 
   @keyframes scroll {
@@ -107,3 +107,22 @@
     @apply border border-primary fixed rounded-full pointer-events-none z-[9998] transition-all duration-150 ease-out;
   }
 }
+
+/* style.css */
+.logo {
+  width: 44px; /* Default for mobile */
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 60px; /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 70px; /* Desktop */
+  }
+}
+

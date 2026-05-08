@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2, Loader2, MessageSquare } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { db, handleFirestoreError, OperationType, sendEmail } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -69,7 +69,7 @@ export default function Contact() {
               Ready to harness the power of location intelligence? Send us your coordinates and we'll bridge the gap between data and decisions.
             </p>
             
-            <div className="space-y-8 mb-12">
+            {/* <div className="space-y-8 mb-12">
               <div className="flex items-start gap-6 group">
                 <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-[#0a0f1e] transition-all">
                   <Mail size={24} />
@@ -100,11 +100,13 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex gap-4">
               <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Linkedin /></a>
               <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Mail /></a>
+              <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><MessageSquare /></a>
+
             </div>
             {/*
             <div className="mt-12 rounded-3xl overflow-hidden border border-white/10 group aspect-video">

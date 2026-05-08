@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import { Globe, Shield, Zap } from 'lucide-react';
 
 const stats = [
-  { icon: <Globe className="text-primary" />, title: 'Earth-First Approach', desc: 'Every solution begins with understanding the land, the data, and the environment it serves.' },
-  { icon: <Shield className="text-primary" />, title: 'Satellite-Grade Accuracy', desc: 'We leverage the best satellite platforms — Sentinel, Landsat, SAR — for reliable spatial truth.' },
-  { icon: <Zap className="text-primary" />, title: 'Data-Driven Decisions', desc: 'Our outputs are designed for action, not just archiving — usable by teams at every level.' },
+  { icon: <Globe className="text-primary" />, title: 'Earth First Approach', desc: 'Every solution begins with understanding the land, the data, and the environment it serves.' },
+  { icon: <Shield className="text-primary" />, title: 'Satellite Grade Accuracy', desc: 'We leverage the best satellite platforms  Sentinel, Landsat, SAR for reliable spatial truth.' },
+  { icon: <Zap className="text-primary" />, title: 'Data Driven Decisions', desc: 'Our outputs are designed for action, not just archiving usable by teams at every level.' },
   { icon: <Globe className="text-primary" />, title: 'Startup Agility', desc: 'We move fast, communicate clearly, and adapt to your timeline without sacrificing quality.' },
 ];
 
@@ -62,14 +62,14 @@ export default function About() {
             [ WHO WE ARE ]
           </span>
           <h2 className="font-display text-4xl md:text-6xl font-black mb-8 leading-[1.1] tracking-[-1px]">
-            Precision. Integrity. Spatial Intelligence <span className="text-primary">Built for the Real World.</span>
+            Precision, Integrity, Spatial Intelligence. <span className="text-primary">Built for the Real World.</span>
           </h2>
           <div className="space-y-6 mb-10">
             <p className="text-lg text-text-muted leading-relaxed">
-              SpatioCore Tech is a forward-thinking geospatial technology startup on a mission to turn complex earth data into clear, actionable intelligence. Founded by certified GIS and remote sensing professionals, we bridge the gap between raw satellite imagery and real-world decision-making across environmental, geological, public health, and commercial sectors.
+              SpatioCore Tech is a forward thinking geospatial technology startup on a mission to turn complex earth data into clear, actionable intelligence. Founded by certified GIS and remote sensing professionals, we bridge the gap between raw satellite imagery and real world decision making across environmental, geological, public health, and commercial sectors.
             </p>
             <p className="text-lg text-text-muted leading-relaxed">
-              From flood hazard zonation and mangrove change detection to geological terrain analysis and disease outbreak mapping, every project we deliver is grounded in scientific rigor, spatial precision, and a commitment to clarity. We don't just produce maps — we produce insight.
+              From flood hazard zonation and mangrove change detection to geological terrain analysis and disease outbreak mapping, every project we deliver is grounded in scientific rigor, spatial precision, and a commitment to clarity. We don't just produce maps we produce insight.
             </p>
           </div>
           

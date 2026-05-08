@@ -9,7 +9,7 @@ export default function Tools() {
             [ TOOLS WE MASTER ]
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-black mb-4">
-            Industry-Standard Tools. <br />
+            Industry Standard Tools. <br />
             <span className="text-primary">Startup Agility. Professional Precision.</span>
           </h2>
         </div>

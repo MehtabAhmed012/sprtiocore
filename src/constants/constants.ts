@@ -9,9 +9,9 @@ export const SERVICES = [
     category: 'GIS & Spatial Analysis',
     image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800',
     items: [
-      { name: 'GIS & Spatial Analysis', description: 'Custom mapping, geodatabase design, land use planning, flood zonation, network analysis, and web GIS dashboards that make spatial data accessible to decision-makers at every level.' },
-      { name: 'Geodatabase Design', description: 'Enterprise-grade spatial database architecture and management.' },
-      { name: 'Spatial Dashboards', description: 'Interactive visualization tools for real-time geographic data.' }
+      { name: 'GIS & Spatial Analysis', description: 'Land use Planning, Flood Zonation, Site Suitability Analysis, Network & Route Analysis, Buffer, Overlay & Proximity Analysis, Zoning & Urban Planning Maps.' },
+      { name: 'Geodatabase Design', description: 'Enterprise grade spatial database architecture and management.' },
+      { name: 'Spatial Dashboards', description: 'Web GIS dashboards that make spatial data accessible to decision makers at every level. Interactive visualization tools for real time geographic data.' }
     ]
   },
   {
@@ -19,9 +19,9 @@ export const SERVICES = [
     category: 'Remote Sensing',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
     items: [
-      { name: 'Remote Sensing & Image Processing', description: 'Multispectral image classification, SAR processing, vegetation index analysis (NDVI/EVI), change detection, and satellite-based land surface monitoring at scale using Google Earth Engine and ENVI.' },
-      { name: 'SAR Processing', description: 'Radar-based mapping for all-weather, clouds-penetrating monitoring.' },
-      { name: 'Vegetation Indexing', description: 'NDVI and EVI analysis for crop and forest health tracking.' }
+      { name: 'Remote Sensing & Image Processing', description: 'Multispectral image classification, SAR processing, Index Base analysis (NDVI/EVI), and satellite based land surface monitoring at scale using Google Earth Engine and ENVI.' },
+      { name: 'SAR Processing', description: 'Radar based mapping for all weather, clouds penetrating monitoring.' },
+      { name: 'Change Detection Analysis', description: 'Urban Expansion Monitoring, Mangrove & Wetland Change Detection, Deforestation & Forest Cover Analysis, Coastal & Shoreline Change Analysis' }
     ]
   },
   {
@@ -29,7 +29,7 @@ export const SERVICES = [
     category: 'Environmental',
     image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=800',
     items: [
-      { name: 'Environmental Consulting', description: 'Watershed analysis, EIA mapping, carbon stock estimation, biodiversity habitat studies, climate vulnerability mapping, and erosion assessment for sustainable development planning.' },
+      { name: 'Environmental Consulting', description: 'Watershed Analysis, Biodiversity Habitat Studies, Climate Vulnerability Mapping, Air Quality & Pollution Dispersion Mapping, and Erosion Assessment for sustainable development planning.' },
       { name: 'EIA Mapping', description: 'Mapping for Environmental Impact Assessments and regulatory compliance.' },
       { name: 'Carbon Monitoring', description: 'Biomass estimation and carbon sequestration tracking.' }
     ]
@@ -39,8 +39,8 @@ export const SERVICES = [
     category: 'Geology & Terrain',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
     items: [
-      { name: 'Geology & Terrain Analysis', description: 'DEM analysis, slope/aspect mapping, landslide susceptibility, groundwater potential zones, fault lineament extraction, and mineral prospectivity studies for earth science applications.' },
-      { name: 'Landslide Hazard', description: 'Slope stability analysis and susceptibility zonation.' },
+      { name: 'Geology & Terrain Analysis', description: 'Landslide susceptibility, groundwater potential zones, fault lineament extraction, and studies for earth science applications.' },
+      { name: 'Multi Hazard Vulnerability and Risk Assessment', description: 'Earthquake, Flood, Landslide, Cyclone, Drought & Tsunami Risk assessment and vulnerability mapping for natural hazards.' },
       { name: 'Mineral Prospecting', description: 'Geological feature extraction for resource exploration.' }
     ]
   },
@@ -49,7 +49,7 @@ export const SERVICES = [
     category: 'Health & Safety GIS',
     image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=800',
     items: [
-      { name: 'Health & Safety GIS', description: 'Disease outbreak mapping, vector-borne risk zones, healthcare facility coverage, industrial hazard delineation, evacuation route planning, and post-disaster damage assessment for public safety.' },
+      { name: 'Health & Safety GIS', description: 'Disease outbreak mapping, vector borne risk zones, healthcare facility coverage, industrial hazard delineation, and post disaster damage assessment for public safety.' },
       { name: 'Industrial Risks', description: 'Spatial auditing for workplace safety and hazard mitigation.' },
       { name: 'Evacuation Planning', description: 'Dynamic routing and spatial modeling for emergency response.' }
     ]
@@ -61,7 +61,7 @@ export const SERVICES = [
     items: [
       { name: 'Applied Sector Solutions', description: 'Tailored GIS and remote sensing solutions for agriculture, disaster management, urban planning, forestry, coastal monitoring, mining operations, and transportation network analysis.' },
       { name: 'Urban Planning', description: 'Smart city zoning, utility mapping, and demographic analysis.' },
-      { name: 'Disaster Relief', description: 'Post-disaster recovery mapping and damage assessment.' }
+      { name: 'Disaster Relief', description: 'Post disaster recovery mapping and damage assessment.' }
     ]
   }
 ];
@@ -73,7 +73,7 @@ export const PORTFOLIO = [
     tags: ['SAR', 'GEE', 'ArcGIS'], 
     category: 'Flood Mapping', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRX8KmMxu5ULcLdE2QzMVox_zhOxBz1WLKeg&s',
-    description: 'Multi-temporal SAR analysis to map inundation extents with cloud-penetrating precision. Output included flood depth estimates and at-risk population layers.'
+    description: 'Multi temporal SAR analysis to map inundation extents with cloud-penetrating precision. Output included flood depth estimates and at risk population layers.'
   },
   { 
     id: 2, 
@@ -81,7 +81,7 @@ export const PORTFOLIO = [
     tags: ['LULC', 'ENVI', 'GEE'], 
     category: 'Mangrove', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGk3PSbBZG2AHlfj1tKWioIghsa2TwTtWfww&s',
-    description: 'Long-term mangrove monitoring using spectral indices and supervised classification to quantify ecosystem loss and flag priority restoration zones.'
+    description: 'Long term mangrove monitoring using spectral indices and supervised classification to quantify ecosystem loss and flag priority restoration zones.'
   },
   { 
     id: 3, 
@@ -89,7 +89,7 @@ export const PORTFOLIO = [
     tags: ['GIS', 'ArcGIS', 'QGIS'], 
     category: 'Geology', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6nKdKHw4Q9Lozgce-u8xetEei6vTSAk0vA&s',
-    description: 'Weighted overlay and frequency ratio methods applied to slope, aspect, soil type, and land cover data to produce 5-class susceptibility maps.'
+    description: 'Weighted overlay and frequency ratio methods applied to slope, aspect, soil type, and land cover data to produce 5 class susceptibility maps.'
   },
   { 
     id: 4, 
@@ -113,7 +113,7 @@ export const PORTFOLIO = [
     tags: ['Geology', 'GIS', 'QGIS'], 
     category: 'Geology', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj_EnJ_x2_pKFHlwbMpQI1RnntJoaATFYVg&s',
-    description: 'Multi-layer GIS integration to identify high-priority groundwater recharge zones, supporting borehole siting and rural water supply planning.'
+    description: 'Multi layer GIS integration to identify high-priority groundwater recharge zones, supporting borehole siting and rural water supply planning.'
   },
 ];
 

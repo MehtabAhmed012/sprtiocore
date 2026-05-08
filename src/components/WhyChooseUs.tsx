@@ -5,7 +5,7 @@ const reasons = [
   {
     icon: <Layers className="text-primary" size={32} />,
     title: 'Multi-Platform Expertise',
-    desc: 'Our team is proficient in ArcGIS, QGIS, Google Earth Engine, ERDAS, ENVI, and Python-based geospatial libraries — ensuring we always use the right tool for the right problem.'
+    desc: 'Our team is proficient in ArcGIS, QGIS, Google Earth Engine, ERDAS, ENVI, and Python based geospatial libraries ensuring we always use the right tool for the right problem.'
   },
   {
     icon: <Zap className="text-primary" size={32} />,

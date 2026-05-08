@@ -33,7 +33,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight"
           >
-            End-to-End Geospatial Services — <span className="text-primary">From Satellite to Street Level</span>
+            End-to-End Geospatial Services <span className="text-primary">From Satellite to Street Level</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-lg text-text-muted leading-relaxed"
           >
-            Whether you need land use mapping, environmental impact assessment, geological hazard analysis, or health GIS solutions — SpatioCore Tech delivers measurable results with tools trusted by governments, researchers, and industry leaders worldwide.
+            Whether you need land use mapping, environmental impact assessment, geological hazard analysis, or health GIS solutions SpatioCore Tech delivers measurable results with tools trusted by governments, researchers, and industry leaders worldwide.
           </motion.p>
         </div>
 
@@ -78,12 +78,12 @@ export default function Services() {
                   {icons[activeCategory.category] || <Map />}
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4 group-hover:text-primary transition-colors">{item.name}</h3>
-                <p className="text-text-light/70 dark:text-text-base/70 text-sm mb-6 leading-relaxed">
+                <p className="text-text-light/70 dark:text-text-base/70 text-sm mb-6 leading-relaxed titlecase">
                   {item.description}
                 </p>
-                <a href="#blog" className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                {/* <a href="#blog" className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                   View Case Study <ArrowUpRight size={14} />
-                </a>
+                </a> */}
               </motion.div>
             ))}
           </AnimatePresence>

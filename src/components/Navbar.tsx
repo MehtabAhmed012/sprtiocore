@@ -4,6 +4,8 @@ import { Sun, Moon, Menu, X, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 import { useUser } from '../lib/UserContext';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
+
 
 const navLinks = [
   { name: 'Home', href: '/#home' },
@@ -26,13 +28,19 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
   useEffect(() => {
+    // Scroll handler to toggle navbar styles
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {  
+      window.removeEventListener('scroll', handleScroll);
+    }; 
   }, []);
 
   return (
@@ -45,15 +53,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="relative w-9 h-9">
-            <div className="absolute inset-0 border-2 border-primary/30 rounded-lg group-hover:border-primary transition-colors duration-500" />
-            <div className="absolute inset-[3px] border-2 border-primary rounded-md group-hover:shadow-[0_0_15px_rgba(0,201,167,0.5)] transition-all duration-500" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-          </div>
-          <span className="font-display text-[20px] font-black tracking-[3px] uppercase leading-none">
-            SPATIO<span className="text-primary drop-shadow-[0_0_10px_rgba(0,201,167,0.3)]">CORE</span>
-          </span>
+        <Link to="/" className="flex items-center gap-1 group">
+          <img src={logo} alt="soatiocoretech" className="logo" />
+          <span className="font-display text-[15px] lg:text-[20px] font-black tracking-[3px] uppercase leading-none align-bottom">
+            SPATIOCORE <span className="text-primary drop-shadow-[0_0_10px_rgba(0,201,167,0.3)]">TECH</span>
+          </span> 
         </Link>
 
         {/* Desktop Nav */}
