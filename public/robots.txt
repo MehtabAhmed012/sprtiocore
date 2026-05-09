@@ -1,3 +1,7 @@
+User-agent: facebookexternalhit
+Allow: /
+
 User-agent: *
 Allow: /
 Sitemap: https://www.spatiocore.com/sitemap.xml
+
