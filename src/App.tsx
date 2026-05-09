@@ -83,8 +83,8 @@ export default function App() {
             
             <Routes>
               <Route path="/" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/services" element={<Blog />} />
+              <Route path="/services/:slug" element={<BlogPost />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route 
