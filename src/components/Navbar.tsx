@@ -4,7 +4,6 @@ import { Sun, Moon, Menu, X, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 import { useUser } from '../lib/UserContext';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png';
 
 
 const navLinks = [
@@ -54,7 +53,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1 group">
-          <img src={logo} alt="soatiocoretech" className="logo" />
+          <img src={"/assets/logo.png"} alt="soatiocoretech" className="logo" />
           <span className="font-display text-[15px] lg:text-[20px] font-black tracking-[3px] uppercase leading-none align-bottom">
             SPATIOCORE <span className="text-primary drop-shadow-[0_0_10px_rgba(0,201,167,0.3)]">TECH</span>
           </span> 

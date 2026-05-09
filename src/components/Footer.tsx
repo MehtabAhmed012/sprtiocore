@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { db, handleFirestoreError, OperationType, loginWithGoogle, logout } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useUser } from '../lib/UserContext';
-import logo from '../assets/logo.png';
 
 export default function Footer() {
   const { user, role } = useUser();
@@ -49,7 +48,7 @@ export default function Footer() {
           {/* Col 1 */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-group">
-              <img src={logo} alt="SpatioCore Logo" className="w-8 h-8 rounded-lg object-cover" />
+              <img src={"/assets/logo.png"} alt="SpatioCore Logo" className="w-8 h-8 rounded-lg object-cover" />
               {/* <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-[#0a0f1e] font-bold text-xl">S</div> */}
               <span className="font-display text-xl font-bold tracking-tight text-primary">
                 SpatioCORE <span className="text-text-base">TECH</span>
