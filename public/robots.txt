@@ -3,5 +3,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+<<<<<<< HEAD
 Sitemap: https://www.spatiocore.com/sitemap.xml
 
+=======
+Sitemap: https://www.spatiocore.com/sitemap.xml
+>>>>>>> 8fa288b (	modified:   index.html)
