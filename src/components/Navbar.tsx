@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Portfolio', href: '/#portfolio' },
   { name: 'Industries', href: '/#industries' },
   // { name: 'Team', href: '/#team' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: '/services' },
   { name: 'Contact', href: '/#contact' },
 ];
 
