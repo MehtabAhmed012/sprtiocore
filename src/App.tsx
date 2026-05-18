@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './components/ThemeContext';
 import { UserProvider } from './lib/UserContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -112,6 +113,7 @@ export default function App() {
               <ArrowUp size={24} />
             </button>
           </div>
+          <Analytics />
         </BrowserRouter>
       </ThemeProvider>
     </UserProvider>
