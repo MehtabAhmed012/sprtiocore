@@ -6,7 +6,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './components/ThemeContext';
 import { UserProvider } from './lib/UserContext';
@@ -30,6 +30,27 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import QuoteModal from './components/QuoteModal';
+
+function ScrollToAnchor() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location.pathname, location.hash, location.key]);
+
+  return null;
+}
 
 function MainLandingPage({ onOpenQuote }: { onOpenQuote: () => void }) {
   return (
@@ -74,6 +95,7 @@ export default function App() {
       <HelmetProvider>
         <ThemeProvider>
           <BrowserRouter>
+            <ScrollToAnchor />
             <div className="min-h-screen bg-bg-base text-text-base selection:bg-primary selection:text-[#0a0f1e]">
               <CustomCursor />
               

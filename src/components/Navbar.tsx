@@ -63,23 +63,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            link.href.startsWith('/#') ? (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="text-[12px] font-semibold uppercase tracking-[1px] text-text-muted hover:text-text-base transition-colors"
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link 
-                key={link.name} 
-                to={link.href}
-                className="text-[12px] font-semibold uppercase tracking-[1px] text-text-muted hover:text-text-base transition-colors"
-              >
-                {link.name}
-              </Link>
-            )
+            <Link 
+              key={link.name} 
+              to={link.href}
+              className="text-[12px] font-semibold uppercase tracking-[1px] text-text-muted hover:text-text-base transition-colors"
+            >
+              {link.name}
+            </Link>
           ))}
         </div>
 
@@ -128,25 +118,14 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           >
             <div className="flex flex-col items-center gap-6 pt-12">
               {navLinks.map((link) => (
-                link.href.startsWith('/#') ? (
-                  <a 
-                    key={link.name} 
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-display font-medium hover:text-primary transition-colors text-text-base"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link 
-                    key={link.name} 
-                    to={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-display font-medium hover:text-primary transition-colors text-text-base"
-                  >
-                    {link.name}
-                  </Link>
-                )
+                <Link 
+                  key={link.name} 
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-display font-medium hover:text-primary transition-colors text-text-base"
+                >
+                  {link.name}
+                </Link>
               ))}
 
               {role && (
