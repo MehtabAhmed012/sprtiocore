@@ -26,6 +26,7 @@ import BlogPost from './components/BlogPost';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import Careers from './components/Careers';
+import JobDetails from './components/JobDetails';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -111,6 +112,7 @@ export default function App() {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/careers/:jobId" element={<JobDetails />} />
                 <Route path="/internship" element={<Navigate to="/careers" replace />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfService />} />

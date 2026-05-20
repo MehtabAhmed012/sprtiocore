@@ -1,0 +1,99 @@
+[
+  {
+    "id": "geospatial-analyst-intern",
+    "title": "Geospatial Analyst Intern",
+    "program": "Summer Internship Program 2026",
+    "category": "Intership",
+    "location": "Virtual / Remote Office Node",
+    "deadline": "June 5, 2026",
+    "duration": "4 Weeks",
+    "compensation": "Remote & Unpaid",
+    "capacity": "Limited Seats",
+    "programWorkspace": "June 15 – July 15, 2026 | 4 Weeks | Remote & Unpaid",
+    "shortDescription": "Expand your academic foundations through specialized mapping assignments and direct analysis. We have designed a curriculum structured around real-world Earth Observation and spatial science deliverables.",
+    "longDescription": "SpatioCore is opening applications for environmental science, geology, geography, GIS, remote sensing, and spatial science students who want to build real-world experience mapping global landscapes. Translate your theoretical classroom foundations into actual, verifiable earth observation portfolios. Under active expert mentorship, you will build models and map terrain changes to formulate modern reports.",
+    "mission": "Earth Observation Internship",
+    "tools": "QGIS / ArcGIS Pro / Google Earth Engine / GDAL",
+    "platform": "Sentinel-2, Landsat-8/9, SAR Sensors",
+    "stats": [
+      { "value": "4 Weeks", "label": "Program Duration" },
+      { "value": "100%", "label": "Remote & Structured" },
+      { "value": "8+", "label": "Advanced Core Skills" },
+      { "value": "Limited", "label": "Cohort Placement Seats" }
+    ],
+    "learnedSkills": [
+      {
+        "title": "GIS Mapping & Spatial Analysis",
+        "description": "Perform spatial queries, overlay analysis, raster computations, and vector data manipulations using modern industry-leading software suites.",
+        "icon": "Layers",
+        "color": "primary"
+      },
+      {
+        "title": "Remote Sensing & Image Processing",
+        "description": "Retrieve, preprocess, and process multispectral satellite imagery, executing radiometric corrections and vegetation indices mapping.",
+        "icon": "Satellite",
+        "color": "accent"
+      },
+      {
+        "title": "Land Use / Land Cover (LULC)",
+        "description": "Classify terrain surfaces using supervised and unsupervised classifiers to observe ecological change, urban sprawl, and resource footprints.",
+        "icon": "Globe",
+        "color": "secondary"
+      },
+      {
+        "title": "Change Detection Techniques",
+        "description": "Compare temporal datasets to monitor deforestation patterns, coastline erosion, glacier movements, and post-disaster land shifts over time.",
+        "icon": "Compass",
+        "color": "secondary"
+      },
+      {
+        "title": "Terrain & Geological Analysis",
+        "description": "Process Digital Elevation Models (DEM) to generate custom slope distributions, aspect gradients, contour maps, and terrain profiles.",
+        "icon": "Map",
+        "color": "accent"
+      },
+      {
+        "title": "Health & Safety Hazard Mapping",
+        "description": "Construct risk factor zones for vector-borne outbreaks, healthcare supply chains, flood mitigation zones, and environmental vulnerability routes.",
+        "icon": "CheckCircle",
+        "color": "primary"
+      },
+      {
+        "title": "Environmental Data Interpretation",
+        "description": "Examine watershed runoffs, canopy density parameters, and air/soil quality attributes to formulate environmental reports.",
+        "icon": "Sparkles",
+        "color": "primary"
+      },
+      {
+        "title": "Geospatial Visualization & Reporting",
+        "description": "Translate telemetry databases and topological metrics into executive charts, modern data cartographies, and rich reports.",
+        "icon": "Award",
+        "color": "primary"
+      }
+    ],
+    "benefits": [
+      { "title": "Academic Certification", "desc": "Gain an official Certificate of Completion detailing your hours, projects, and specific software proficiency achievements." },
+      { "title": "Hands-on Practical Case Files", "desc": "Acquire raw satellite datasets to build and report fully autonomous projects ready for your academic thesis or portfolio." },
+      { "title": "Active Industry Mentorship", "desc": "Engage in scheduled code reviews, remote workflow touchpoints, and custom mapping reviews with spatial scientists." },
+      { "title": "Modern Spatial Tech Stack", "desc": "Incorporate QGIS, remote sensing toolkits, Sentinel/Landsat libraries, and spatial databases into your workflow." }
+    ],
+    "faqs": [
+      {
+        "q": "Who is eligible to apply for this program?",
+        "a": "This program is open to students currently pursuing or recently graduated with degrees in Environmental Science, Geology, Geography, GIS, Remote Sensing, Spatial Informatics, and related Earth Science disciplines."
+      },
+      {
+        "q": "Is there any cost or fee associated with joining?",
+        "a": "No. There are absolutely no registration fees, evaluation fees, or technology charges. It is an unpaid learning experience structured purely to foster practical GIS skills and build career portfolios."
+      },
+      {
+        "q": "What is the level of commitment expected during the 4 weeks?",
+        "a": "Since the internship is fully remote, we support synchronous and asynchronous learning. We recommend dedicating approximately 10 to 15 hours per week to complete the project files, tutorial guides, and submit evaluation reports."
+      },
+      {
+        "q": "Will I receive feedback on my projects?",
+        "a": "Yes! Your geospatial portfolio mapping deliverables will be evaluated by SpatioCore Tech's Senior Consultants. You will receive precise technical reviews and certificate feedback upon program completion."
+      }
+    ]
+  }
+]
