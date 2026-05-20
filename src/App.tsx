@@ -25,6 +25,7 @@ import BlogEditor from './components/BlogEditor';
 import BlogPost from './components/BlogPost';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -87,6 +88,8 @@ export default function App() {
                 <Route path="/" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/internship" element={<Navigate to="/careers" replace />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route 

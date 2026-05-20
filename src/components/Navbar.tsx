@@ -13,6 +13,7 @@ const navLinks = [
   { name: 'Industries', href: '/#industries' },
   // { name: 'Team', href: '/#team' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/#contact' },
 ];
 
