@@ -76,9 +76,6 @@ export default function Careers() {
               <span className="badge-mono mb-2 inline-block">[ POSITION METRICS ]</span>
               <h2 className="font-display text-2xl font-black text-text-base">Available Vacancies</h2>
             </div>
-            <div className="text-xs font-mono text-primary/80 bg-primary/5 border border-primary/10 px-4 py-2 rounded-lg">
-              📡 ACTIVE BROADCAST NODE: Munich/Remote
-            </div>
           </div>
 
           {/* Job Cards Matrix Grid */}
@@ -147,78 +144,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Core values block */}
-      <section className="py-16 bg-black/10 border-t border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-12">
-          <div className="max-w-xl mx-auto space-y-3">
-            <span className="badge-mono">[ WORKSPACES ]</span>
-            <h2 className="font-display text-2xl font-black text-text-base">Why map with SpatioCore?</h2>
-            <p className="text-xs text-text-muted">A structured operational ecosystem designed to optimize professional growth.</p>
-          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="p-6 rounded-xl glass-card space-y-3 text-left border border-white/5">
-              <div className="text-primary w-10 h-10 bg-primary/5 rounded border border-primary/20 flex items-center justify-center font-mono font-bold">[ 01 ]</div>
-              <h4 className="font-display font-semibold text-md text-text-base">Vibrant Mentorship</h4>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Connect and sync with senior spatial observation experts to analyze topography, multispectral, and radar sensor telemetry pipelines.
-              </p>
-            </div>
-            <div className="p-6 rounded-xl glass-card space-y-3 text-left border border-white/5">
-              <div className="text-accent w-10 h-10 bg-accent/5 rounded border border-accent/20 flex items-center justify-center font-mono font-bold">[ 02 ]</div>
-              <h4 className="font-display font-bold text-md text-text-base">Cutting-Edge API Stack</h4>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Integrate industry-standard packages, program remote sensing scripts, and gain practical exposure to QGIS, GDAL, and cloud databases.
-              </p>
-            </div>
-            <div className="p-6 rounded-xl glass-card space-y-3 text-left border border-white/5 col-span-1 sm:col-span-2 lg:col-span-1">
-              <div className="text-secondary w-10 h-10 bg-secondary/5 rounded border border-secondary/20 flex items-center justify-center font-mono font-bold">[ 03 ]</div>
-              <h4 className="font-display font-bold text-md text-text-base">Verified Academic Credentials</h4>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Receive certified competency credits, reference hashes, and detailed projects sheets validating your professional milestones.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SpatioCore Talent Pool / General Drop */}
-      <section className="py-24 relative" id="general-talent-pool">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <span className="badge-mono">[ SPECIFICATION PITCH ]</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-text-base">Don&apos;t fit the current vacancies?</h2>
-          <p className="text-text-muted text-base max-w-xl mx-auto leading-relaxed">
-            We are always seeking passionate environmental scientists, computing engineers, and spatial analysts to join our reserves. Drop your CV directly in our general applications loop!
-          </p>
-
-          <div className="bg-bg-card border border-primary/20 p-6 rounded-xl max-w-lg mx-auto space-y-4 shadow-xl">
-            <Mail className="text-primary w-10 h-10 mx-auto" />
-            <h4 className="font-display font-bold text-lg text-text-base">General Talent Reservoir Drop</h4>
-            <a 
-              href={mailtoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block font-mono text-xl text-primary font-semibold hover:text-accent select-all break-all tracking-wide transition-colors"
-              id="general-recruiter-mail-link"
-            >
-              recruiter.spatiocoretech@outlook.com
-            </a>
-            <p className="text-[10px] text-text-muted uppercase">Clicking the link opens your default email workspace</p>
-          </div>
-
-          <div className="flex justify-center gap-4 pt-4">
-            <a 
-              href={mailtoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase transition-all duration-300 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer"
-              id="general-apply-btn"
-            >
-              Apply via Email <Send size={15} />
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

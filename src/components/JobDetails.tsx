@@ -516,16 +516,8 @@ ${applicantName || '[Your Full Name]'}
                 onClick={() => setIsModalOpen(true)}
                 className="bg-primary hover:bg-primary/90 text-[#0a0f1e] px-4 py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider transition-all cursor-pointer"
               >
-                Apply Wizard
+                Apply Now
               </button>
-              <a 
-                href={mailtoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent hover:bg-accent/90 text-[#0a0f1e] px-4 py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider transition-all cursor-pointer"
-              >
-                Mail CV Link
-              </a>
             </div>
           </motion.div>
         )}
