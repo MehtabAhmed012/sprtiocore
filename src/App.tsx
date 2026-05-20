@@ -6,7 +6,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './components/ThemeContext';
 import { UserProvider } from './lib/UserContext';
@@ -49,6 +49,23 @@ function ScrollToAnchor() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location.pathname, location.hash, location.key]);
+
+  return null;
+}
+
+function SPAQueryRouter() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const goto = params.get('goto');
+    if (goto) {
+      // Strips out ?goto=... in the browser's address bar instantly
+      window.history.replaceState(null, '', goto);
+      // Perform SPA route transition
+      navigate(goto, { replace: true });
+    }
+  }, [navigate]);
 
   return null;
 }
@@ -97,6 +114,7 @@ export default function App() {
         <ThemeProvider>
           <BrowserRouter>
             <ScrollToAnchor />
+            <SPAQueryRouter />
             <div className="min-h-screen bg-bg-base text-text-base selection:bg-primary selection:text-[#0a0f1e]">
               <CustomCursor />
               
