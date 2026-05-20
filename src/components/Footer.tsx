@@ -47,21 +47,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Col 1 */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-group">
-              <img src={"/assets/logo.png"} alt="SpatioCore Logo" className="w-8 h-8 rounded-lg object-cover" />
-              {/* <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-[#0a0f1e] font-bold text-xl">S</div> */}
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 overflow-hidden rounded-lg border border-primary/30 group-hover:border-primary transition-all duration-500 bg-bg-card">
+                <img 
+                  src="/images/logo.png" 
+                  alt="SpatioCore Logo" 
+                  className="w-full h-full object-contain p-1 grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
               <span className="font-display text-xl font-bold tracking-tight text-primary">
-                SpatioCORE <span className="text-text-base">TECH</span>
+                Spatio<span className="text-text-base">Core</span>
               </span>
             </Link>
             <p className="text-sm text-text-base/60 leading-relaxed max-w-xs">
-              Where Earth Data Meets Smart Solutions.
+              SpatioCore Tech — Where Earth Data Meets Smart Solutions.
             </p>
-            {/* <div className="flex gap-4">
+            <div className="flex gap-4">
               <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Linkedin size={18} /></a>
               <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Twitter size={18} /></a>
               <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Github size={18} /></a>
-            </div> */}
+            </div>
           </div>
 
           {/* Col 2 */}
@@ -87,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-text-base/60">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-primary shrink-0 mt-0.5" />
-                <span className="break-all">xidraa@gmail.com</span>
+                <span className="break-all">Insights.spatiocoretech@outlook.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-primary shrink-0 mt-0.5" />
@@ -96,7 +101,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-xs">
-                  Street 5 Sector J, <br /> Bahria Enclave, Islamabad, Pakistan
+                  Street No. 5, Sector J,<br />
+                  Bahria Enclave, Islamabad, Pakistan
                 </span>
               </li>
             </ul>

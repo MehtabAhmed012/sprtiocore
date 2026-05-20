@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, User, Tag, Loader2, Share2 } from 'lucide-react';
 import { db } from '../lib/firebase';
 import { collection, query, where, getDocs, limit, doc, getDoc } from 'firebase/firestore';
@@ -75,6 +76,18 @@ export default function BlogPost() {
 
   return (
     <article className="pt-32 pb-24 bg-bg-base min-h-screen">
+      <Helmet>
+        <title>{post.title} | SpatioCore Tech Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={`${post.title} | SpatioCore Tech`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image || "/images/logo.png"} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.image || "/images/logo.png"} />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-6">
         <Link 
           to="/" 

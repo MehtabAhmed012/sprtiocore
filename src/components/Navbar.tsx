@@ -5,7 +5,6 @@ import { useTheme } from './ThemeContext';
 import { useUser } from '../lib/UserContext';
 import { Link, useLocation } from 'react-router-dom';
 
-
 const navLinks = [
   { name: 'Home', href: '/#home' },
   { name: 'About', href: '/#about' },
@@ -13,7 +12,7 @@ const navLinks = [
   { name: 'Portfolio', href: '/#portfolio' },
   { name: 'Industries', href: '/#industries' },
   // { name: 'Team', href: '/#team' },
-  { name: 'Blog', href: '/services' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -27,19 +26,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
 
   useEffect(() => {
-    // Scroll handler to toggle navbar styles
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 80);
     };
     window.addEventListener('scroll', handleScroll);
-
-    return () => {  
-      window.removeEventListener('scroll', handleScroll);
-    }; 
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -52,11 +45,18 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1 group">
-          <img src={"/assets/logo.png"} alt="soatiocoretech" className="logo" />
-          <span className="font-display text-[15px] lg:text-[20px] font-black tracking-[3px] uppercase leading-none align-bottom">
-            SPATIOCORE <span className="text-primary drop-shadow-[0_0_10px_rgba(0,201,167,0.3)]">TECH</span>
-          </span> 
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-primary/30 group-hover:border-primary transition-all duration-500 bg-bg-card">
+            <img 
+              src="/images/logo.png" 
+              alt="SpatioCore Logo" 
+              className="w-full h-full object-contain p-1 grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+          </div>
+          <span className="font-display text-[20px] font-black tracking-[3px] uppercase leading-none">
+            SPATIO<span className="text-primary drop-shadow-[0_0_10px_rgba(0,201,167,0.3)]">CORE</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}

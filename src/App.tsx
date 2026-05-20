@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './components/ThemeContext';
 import { UserProvider } from './lib/UserContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -69,51 +70,53 @@ export default function App() {
 
   return (
     <UserProvider>
-      <ThemeProvider>
-        <BrowserRouter>
-          <div className="min-h-screen bg-bg-base text-text-base selection:bg-primary selection:text-[#0a0f1e]">
-            <CustomCursor />
-            
-            <motion.div
-              className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left shadow-[0_0_15px_#00c9a7]"
-              style={{ scaleX }}
-            />
-
-            <Navbar onOpenQuote={() => setIsQuoteModalOpen(true)} />
-            
-            <Routes>
-              <Route path="/" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
-              <Route path="/services" element={<Blog />} />
-              <Route path="/services/:slug" element={<BlogPost />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route 
-                path="/admin" 
-                element={
-                  <ProtectedRoute requireAdmin>
-                    <BlogEditor />
-                  </ProtectedRoute>
-                } 
+      <HelmetProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <div className="min-h-screen bg-bg-base text-text-base selection:bg-primary selection:text-[#0a0f1e]">
+              <CustomCursor />
+              
+              <motion.div
+                className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left shadow-[0_0_15px_#00c9a7]"
+                style={{ scaleX }}
               />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
 
-            <Footer />
+              <Navbar onOpenQuote={() => setIsQuoteModalOpen(true)} />
+              
+              <Routes>
+                <Route path="/" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route 
+                  path="/admin" 
+                  element={
+                    <ProtectedRoute requireAdmin>
+                      <BlogEditor />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
 
-            <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+              <Footer />
 
-            {/* Back to Top */}
-            <button
-              onClick={scrollToTop}
-              className={`fixed bottom-8 right-8 p-4 bg-primary text-[#0a0f1e] rounded-full shadow-[0_10px_25px_rgba(0,201,167,0.3)] z-40 transition-all duration-300 ${
-                showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-              }`}
-            >
-              <ArrowUp size={24} />
-            </button>
-          </div>
-        </BrowserRouter>
-      </ThemeProvider>
+              <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+
+              {/* Back to Top */}
+              <button
+                onClick={scrollToTop}
+                className={`fixed bottom-8 right-8 p-4 bg-primary text-[#0a0f1e] rounded-full shadow-[0_10px_25px_rgba(0,201,167,0.3)] z-40 transition-all duration-300 ${
+                  showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+                }`}
+              >
+                <ArrowUp size={24} />
+              </button>
+            </div>
+          </BrowserRouter>
+        </ThemeProvider>
+      </HelmetProvider>
     </UserProvider>
   );
 }

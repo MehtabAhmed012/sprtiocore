@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
 
             <section className="pt-8 border-t border-white/10">
               <p className="text-xs text-text-muted italic">
-                For inquiries regarding your data coordinates, contact our Privacy Officer at xidraa@gmail.com
+                For inquiries regarding your data coordinates, contact our Privacy Officer at Insights.spatiocoretech@outlook.com
               </p>
             </section>
           </div>

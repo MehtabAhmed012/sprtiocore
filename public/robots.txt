@@ -1,9 +1,3 @@
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Facebot
-Allow: /
-
 User-agent: *
 Allow: /
-Sitemap: https://spatiocore.com
+Sitemap: https://www.spatiocore.com/sitemap.xml

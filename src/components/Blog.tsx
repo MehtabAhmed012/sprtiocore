@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Loader2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { db } from '../lib/firebase';
@@ -44,6 +45,12 @@ export default function Blog() {
 
   return (
     <section id="blog" className="pt-32 pb-24 bg-bg-base relative overflow-hidden min-h-screen">
+      <Helmet>
+        <title>Insights & Intelligence | SpatioCore Tech Blog</title>
+        <meta name="description" content="Technical GIS mapping, satellite remote sensing, and environmental data breakthroughs from the SpatioCore Tech team." />
+        <meta property="og:title" content="Insights & Intelligence | SpatioCore Tech Blog" />
+        <meta property="og:description" content="Technical GIS and Remote Sensing articles from SpatioCore Tech." />
+      </Helmet>
       <div className="absolute inset-0 topo-bg opacity-5 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
