@@ -456,47 +456,7 @@ ${applicantName || '[Your Full Name]'}
         </div>
       </section>
 
-      {/* Direct CV Submission */}
-      <section id="careers-contact-section" className="py-24 relative border-t border-white/5 grid justify-center">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <span className="badge-mono">[ SUBMIT APPLICATIONS ]</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-text-base font-bold">Ready to Launch Your Career Track?</h2>
-          <p className="text-text-muted text-base max-w-xl mx-auto leading-relaxed">
-            Send your CV or academic transcript coordinates directly to our official Recruitment Officer email terminal configuration. We look forward to evaluating your mapping competency!
-          </p>
 
-          <div className="bg-bg-card border border-primary/20 p-6 rounded-xl max-w-lg mx-auto space-y-4 shadow-xl">
-            <Mail className="text-primary w-10 h-10 mx-auto" />
-            <h4 className="font-display font-bold text-lg">Send CV directly to our HR box</h4>
-            <a 
-              href={`mailto:${emailAddress}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block font-mono text-xl text-primary font-semibold hover:text-accent select-all break-all tracking-wide transition-colors"
-            >
-              recruiter.spatiocoretech@outlook.com
-            </a>
-            <p className="text-[10px] text-text-muted uppercase">Clicking the link opens your email client context</p>
-          </div>
-
-          <div className="flex justify-center gap-4 pt-4">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase transition-all duration-300 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer"
-            >
-              Open Apply Wizard <Sparkles size={15} />
-            </button>
-            <a 
-              href={mailtoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase transition-all duration-300 shadow-[0_4px_15px_rgba(244,166,35,0.3)] cursor-pointer"
-            >
-              Send Direct Email <Send size={15} />
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Floating Apply widget */}
       <AnimatePresence>
