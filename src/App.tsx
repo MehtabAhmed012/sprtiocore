@@ -31,6 +31,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import QuoteModal from './components/QuoteModal';
+import { NotFound, Forbidden, NotImplemented, ServerError } from './components/ErrorPages';
 
 function ScrollToAnchor() {
   const location = useLocation();
@@ -142,7 +143,11 @@ export default function App() {
                     </ProtectedRoute>
                   } 
                 />
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="/404" element={<NotFound />} />
+                <Route path="/403" element={<Forbidden />} />
+                <Route path="/501" element={<NotImplemented />} />
+                <Route path="/500" element={<ServerError />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
 
               <Footer />

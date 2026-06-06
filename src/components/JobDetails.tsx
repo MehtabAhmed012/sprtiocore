@@ -64,7 +64,7 @@ export default function JobDetails() {
     window.scrollTo({ top: 0 });
 
     const handleScroll = () => {
-      setShowFloatingApply(window.scrollY > 400);
+      setShowFloatingApply(window.scrollY > 40000);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -224,11 +224,11 @@ ${applicantName || '[Your Full Name]'}
             className="flex flex-wrap gap-4 pt-4 justify-center"
           >
             <button 
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => setIsModalOpen(false)}
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer animate-shimmer"
               id="job-apply-now-btn"
             >
-              Apply Now <ArrowRight size={16} />
+              Close <ArrowRight size={16} />
             </button>
           </motion.div>
         </div>
