@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2, Loader2, Facebook, MessageCircle } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { db, handleFirestoreError, OperationType, sendEmail } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -76,7 +76,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-display font-medium text-lg text-primary">Email Terminal</h4>
-                  <p className="text-text-base/60">Insights.spatiocoretech@outlook.com</p>
+                  <p className="text-text-base/60">
+                    <a href="mailto:Insights.spatiocoretech@outlook.com" className="hover:text-primary transition-colors">Insights.spatiocoretech@outlook.com</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
@@ -85,7 +87,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-display font-medium text-lg text-primary">Direct Voice Patch</h4>
-                  <p className="text-text-base/60">+92 326 5702803</p>
+                  <p className="text-text-base/60">
+                    <a href="tel:+923265702803" className="hover:text-primary transition-colors">+92 326 5702803</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
@@ -103,8 +107,10 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Linkedin /></a>
-              <a href="#" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary transition-all text-text-base"><Mail /></a>
+              <a href="https://www.linkedin.com/company/spatiocoretech" target="_blank" rel="noopener noreferrer" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary hover:text-primary transition-all text-text-base" title="LinkedIn"><Linkedin /></a>
+              <a href="https://www.facebook.com/spatiocoretech" target="_blank" rel="noopener noreferrer" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary hover:text-primary transition-all text-text-base" title="Facebook"><Facebook /></a>
+              <a href="https://wa.me/qr/6LVDIH7IAJ7UB1" target="_blank" rel="noopener noreferrer" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary hover:text-primary transition-all text-text-base" title="WhatsApp"><MessageCircle /></a>
+              <a href="mailto:Insights.spatiocoretech@outlook.com" className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl hover:border-primary hover:text-primary transition-all text-text-base" title="Email"><Mail /></a>
             </div>
             {/*
             <div className="mt-12 rounded-3xl overflow-hidden border border-white/10 group aspect-video">

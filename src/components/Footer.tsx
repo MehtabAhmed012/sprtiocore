@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Github, Mail, Loader2, CheckCircle2, ShieldCheck, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Loader2, CheckCircle2, ShieldCheck, Phone, MapPin, Facebook, MessageCircle } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { db, handleFirestoreError, OperationType, loginWithGoogle, logout } from '../lib/firebase';
@@ -63,9 +63,10 @@ export default function Footer() {
               SpatioCore Tech — Where Earth Data Meets Smart Solutions.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors"><Github size={18} /></a>
+              <a href="https://www.linkedin.com/company/spatiocoretech" target="_blank" rel="noopener noreferrer" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors" title="LinkedIn"><Linkedin size={18} /></a>
+              <a href="https://www.facebook.com/spatiocoretech" target="_blank" rel="noopener noreferrer" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors" title="Facebook"><Facebook size={18} /></a>
+              <a href="https://wa.me/qr/6LVDIH7IAJ7UB1" target="_blank" rel="noopener noreferrer" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors" title="WhatsApp"><MessageCircle size={18} /></a>
+              <a href="mailto:Insights.spatiocoretech@outlook.com" className="p-2 bg-black/5 dark:bg-white/5 rounded-lg hover:text-primary transition-colors" title="Email"><Mail size={18} /></a>
             </div>
           </div>
 
@@ -93,11 +94,11 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-text-base/60">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-primary shrink-0 mt-0.5" />
-                <span className="break-all">Insights.spatiocoretech@outlook.com</span>
+                <a href="mailto:Insights.spatiocoretech@outlook.com" className="hover:text-primary transition-colors break-all">Insights.spatiocoretech@outlook.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-primary shrink-0 mt-0.5" />
-                <span>+92 326 5702803</span>
+                <a href="tel:+923265702803" className="hover:text-primary transition-colors">+92 326 5702803</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5" />
