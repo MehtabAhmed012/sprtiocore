@@ -81,11 +81,11 @@ export default function Contact() {
               </div>
               <div className="flex items-start gap-6 group">
                 <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-[#0a0f1e] transition-all">
-                  <Phone size={24} />
+                   <Phone size={24} />
                 </div>
                 <div>
                   <h4 className="font-display font-medium text-lg text-primary">Direct Voice Patch</h4>
-                  <p className="text-text-base/60">+92 325 9900550</p>
+                  <p className="text-text-base/60">+92 326 5702803</p>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
