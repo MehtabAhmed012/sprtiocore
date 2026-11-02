@@ -34,6 +34,7 @@ import SEOHead from './SEOHead';
 import { ProfilePreview } from './DocumentPreviews';
 import { PROFILES_DATA, Profile } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
+import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function ProfilesPage() {
   const [selectedProfile, setSelectedProfile] = useState<Profile | null>(null);
@@ -82,6 +83,25 @@ export default function ProfilesPage() {
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
             Review SpatioCore Tech&apos;s verified 16-page corporate profile, covering institutional standing, executive leadership, satellite Earth observation capabilities, and project case studies. View in side-by-side spread.
           </p>
+
+          {/* Direct Public URL Share Bar */}
+          <PublicLinkShareBar 
+            title="Official Corporate Profile 2026"
+            path="/profiles"
+            code="SC-DOC-PROFILE-2026"
+            categoryLabel="Company Profile Direct Public URL"
+            aliases={['/profile', '/profiles', '/porfile', '/porfiles', '/company-profile']}
+            onOpenBarcodeModal={() => setBarcodeItem({
+              id: 'spatiocoretech-company-profile',
+              code: 'SC-DOC-PROFILE-2026',
+              title: 'Official Corporate Profile 2026',
+              subtitle: '16-Page Verified Institutional Dossier',
+              type: 'profile',
+              targetPath: '/profiles',
+              department: 'Corporate Governance & Geospatial Architecture'
+            })}
+            className="mt-4"
+          />
         </div>
 
         {/* Profiles Gallery Grid */}

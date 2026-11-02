@@ -26,6 +26,7 @@ import { useTheme } from '../ThemeContext';
 import { BUSINESS_CARDS_DATA, BusinessCard, OFFICIAL_PDF_CATALOG } from '../../data/portalData';
 import SEOHead from './SEOHead';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
+import PublicLinkShareBar from './PublicLinkShareBar';
 
 interface DirectVisitingCardProps {
   defaultCardId?: string;
@@ -122,6 +123,21 @@ export default function DirectVisitingCard({ defaultCardId }: DirectVisitingCard
       {/* Main Visiting Card Center Display */}
       <main className="w-full max-w-lg mx-auto my-auto flex flex-col items-center">
         
+        {/* Direct Public Link & Share Bar */}
+        <PublicLinkShareBar 
+          title={`${activeCard.name} Official Visiting Card`}
+          path={activeCard.id === 'sidra-tul-muntaha' ? '/card/ceo' : (activeCard.id === 'mehtab-ahmed' ? '/card/coo' : `/card/${activeCard.id}`)}
+          code={activeCard.code || `SC-ID-${activeCard.id.toUpperCase()}`}
+          categoryLabel="Visiting Card Direct Public URL"
+          aliases={[
+            activeCard.id === 'sidra-tul-muntaha' ? '/card/ceo' : '/card/coo',
+            `/card/${activeCard.id}`,
+            `/visiting-card/${activeCard.id}`
+          ]}
+          onOpenBarcodeModal={() => setIsQrModalOpen(true)}
+          className="mb-3"
+        />
+
         {/* Card Navigator & Flip Switcher Bar */}
         <div className="w-full flex items-center justify-between mb-3 px-1 text-xs font-mono text-slate-600 dark:text-slate-400">
           

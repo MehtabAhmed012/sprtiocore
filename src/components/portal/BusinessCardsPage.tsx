@@ -31,6 +31,7 @@ import SEOHead from './SEOHead';
 import { BusinessCardPreview } from './DocumentPreviews';
 import { BUSINESS_CARDS_DATA, BusinessCard, ORGANIZATION_CONFIG } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
+import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function BusinessCardsPage() {
   const [searchParams] = useSearchParams();
@@ -174,6 +175,24 @@ export default function BusinessCardsPage() {
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-4 sm:py-8">
         
+        {/* Direct Public Link & Share Bar for the Cards Directory */}
+        <PublicLinkShareBar 
+          title="Official Business & Visiting Cards Registry"
+          path="/cards"
+          code="SC-DIR-CARDS-2026"
+          categoryLabel="Visiting Cards Hub Public URL"
+          aliases={['/cards', '/business-cards', '/visiting-cards', '/card/ceo', '/card/coo']}
+          onOpenBarcodeModal={() => setBarcodeModalItem({
+            id: activeCard.id,
+            code: activeCard.code || `SC-ID-${activeCard.id.toUpperCase()}`,
+            title: `${activeCard.name} — Visiting Card`,
+            subtitle: `${activeCard.title} | ${activeCard.department}`,
+            type: 'visiting_card',
+            targetPath: `/card/${activeCard.id}`
+          })}
+          className="mb-6"
+        />
+
         {/* ========================================================================= */}
         {/* DIRECT VISITING CARD ACTIVE STAGE (OPEN DIRECTLY ON SCREEN) */}
         {/* ========================================================================= */}
@@ -510,12 +529,14 @@ export default function BusinessCardsPage() {
 
                   <button
                     onClick={() => setBarcodeModalItem({
-                      code: card.code || `SC-ID-${card.id}`,
+                      id: card.id,
+                      code: card.code || `SC-ID-${card.id.toUpperCase()}`,
                       title: `${card.name} — Visiting Card`,
                       subtitle: `${card.title} | ${card.department}`,
+                      type: 'visiting_card',
                       targetPath: `/card/${card.id}`,
-                      typeLabel: 'Personnel Digital Visiting Card',
-                      formatName: 'Live Interactive Profile & vCard'
+                      department: card.department,
+                      badge: card.badge
                     })}
                     className="bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 border border-teal-500/30 p-3 rounded-xl transition-colors cursor-pointer"
                     title="Download Barcode & QR Code Badge"

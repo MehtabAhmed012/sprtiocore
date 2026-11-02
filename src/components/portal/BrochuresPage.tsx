@@ -34,6 +34,7 @@ import SEOHead from './SEOHead';
 import { BrochurePreview } from './DocumentPreviews';
 import { BROCHURES_DATA, Brochure, OFFICIAL_PDF_CATALOG } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
+import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function BrochuresPage() {
   const [selectedBrochure, setSelectedBrochure] = useState<Brochure | null>(null);
@@ -103,6 +104,25 @@ export default function BrochuresPage() {
               </p>
             </div>
           </div>
+
+          {/* Direct Public URL Share Bar */}
+          <PublicLinkShareBar 
+            title="Official Capabilities Brochure 2026"
+            path="/brochures"
+            code="SC-DOC-BROCHURE-2026"
+            categoryLabel="Brochure Direct Public URL"
+            aliases={['/brochure', '/brochures', '/brouchure', '/borcher', '/catalog']}
+            onOpenBarcodeModal={() => setBarcodeItem({
+              id: 'spatiocoretech-brochure-2026',
+              code: 'SC-DOC-BROCHURE-2026',
+              title: 'Official Capabilities Brochure 2026',
+              subtitle: 'Earth Observation & GIS Architecture Catalog',
+              type: 'brochure',
+              targetPath: '/brochures',
+              department: 'Corporate Communications & Technical Services'
+            })}
+            className="mt-4"
+          />
 
           {/* Category Filter tabs */}
           <div className="flex items-center gap-2 mt-4 overflow-x-auto pb-2 scrollbar-none text-xs">

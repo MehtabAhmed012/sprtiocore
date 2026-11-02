@@ -209,6 +209,134 @@ async function startServer() {
     }
   });
 
+  // Dynamic OpenGraph / Twitter Cards / Title injection for all public direct links
+  function injectPublicPageMeta(rawHtml: string, reqUrl: string, host: string): string {
+    try {
+      const urlObj = new URL(reqUrl, `https://${host}`);
+      const pathname = urlObj.pathname.toLowerCase();
+
+      // 1. Identity Portal Public Direct URLs
+      if (
+        pathname === '/portal' || 
+        pathname === '/identity' || 
+        pathname === '/id-portal' || 
+        pathname === '/client-portal' || 
+        pathname === '/identity-portal' || 
+        pathname.startsWith('/portal/') ||
+        pathname === '/qr'
+      ) {
+        const title = 'Official Public Identity & Verification Portal | SpatioCore Tech';
+        const description = 'Access official verified digital visiting cards, executive leadership credentials, corporate capabilities brochure, and company profile repository for SpatioCore Tech.';
+        const fullUrl = `https://${host}${urlObj.pathname}`;
+        return rawHtml
+          .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
+          .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
+          .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
+          .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
+          .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
+      }
+      
+      // 2. Brochures & Publications Public Direct URLs (with typo tolerance: brouchure, borcher)
+      if (
+        pathname.includes('brochure') || 
+        pathname.includes('brouchure') || 
+        pathname.includes('borcher') || 
+        pathname.includes('borchure') || 
+        pathname === '/catalog'
+      ) {
+        const title = 'Corporate Capabilities Brochure 2026 | SpatioCore Tech';
+        const description = 'Official corporate capabilities brochure of SpatioCore Tech. Explore GIS, remote sensing, satellite data analytics, and geospatial intelligence solutions in wide spread format.';
+        const fullUrl = `https://${host}${urlObj.pathname}`;
+        return rawHtml
+          .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
+          .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
+          .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
+          .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
+          .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
+      }
+
+      // 3. Profiles & Institutional Dossiers Public Direct URLs (with typo tolerance: porfile, porfiles)
+      if (pathname.includes('profile') || pathname.includes('porfile')) {
+        const title = 'Official Company Profile | SpatioCore Tech';
+        const description = 'Verified comprehensive company profile of SpatioCore Tech. 16-page executive briefing on satellite data engineering, precision remote sensing, and enterprise geospatial intelligence.';
+        const fullUrl = `https://${host}${urlObj.pathname}`;
+        return rawHtml
+          .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
+          .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
+          .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
+          .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
+          .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
+      }
+
+      // 4. Cards Collective Directory
+      if (
+        pathname === '/cards' || 
+        pathname === '/business-cards' || 
+        pathname === '/visiting-cards' || 
+        pathname === '/vcards' || 
+        pathname === '/visitingcards' || 
+        pathname === '/business-card'
+      ) {
+        const title = 'Official Personnel & Executive Business Cards | SpatioCore Tech';
+        const description = 'Verified digital visiting cards and leadership contact registry for SpatioCore Tech. Instant connection via WhatsApp, phone, and email.';
+        const fullUrl = `https://${host}${urlObj.pathname}`;
+        return rawHtml
+          .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
+          .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
+          .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
+          .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
+          .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
+      }
+
+      // 5. Individual Personnel Direct Visiting Cards
+      let cardId = '';
+      if (
+        pathname.startsWith('/card/') || 
+        pathname.startsWith('/cards/') || 
+        pathname.startsWith('/visiting-card/') || 
+        pathname.startsWith('/visitingcards/') || 
+        pathname.startsWith('/vcard/')
+      ) {
+        cardId = pathname.split('/')[2] || '';
+      } else if (pathname === '/card' || pathname === '/visiting-card' || pathname === '/vcard') {
+        cardId = urlObj.searchParams.get('card') || urlObj.searchParams.get('id') || 'sidra-tul-muntaha';
+      }
+
+      if (cardId === 'ceo') cardId = 'sidra-tul-muntaha';
+      if (cardId === 'coo') cardId = 'mehtab-ahmed';
+
+      if (cardId) {
+        const cardsJsonPath = path.resolve(process.cwd(), 'src/data/businessCards.json');
+        if (fs.existsSync(cardsJsonPath)) {
+          const cards = JSON.parse(fs.readFileSync(cardsJsonPath, 'utf-8'));
+          const card = cards.find((c: any) => c.id === cardId) || cards[0];
+          if (card) {
+            const title = `${card.name} | ${card.title} – SpatioCore Tech`;
+            const description = `Official verified digital visiting card for ${card.name}, ${card.title} at SpatioCore Tech. Connect via WhatsApp (${card.phone}) or Email (${card.email}). Where Earth Data Meets Smart Solutions.`;
+            const fullUrl = `https://${host}${urlObj.pathname}`;
+            const imageUrl = `https://${host}/images/og-visiting-card.svg`;
+
+            let updated = rawHtml;
+            updated = updated.replace(/<title>.*?<\/title>/i, `<title>${title}</title>`);
+            updated = updated.replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`);
+            updated = updated.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`);
+            updated = updated.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`);
+            updated = updated.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
+            updated = updated.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, `<meta property="og:image" content="${imageUrl}" />`);
+            updated = updated.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:title" content="${title}" />`);
+            updated = updated.replace(/<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:description" content="${description}" />`);
+            updated = updated.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:image" content="${imageUrl}" />`);
+            return updated;
+          }
+        }
+      }
+
+      return rawHtml;
+    } catch (e) {
+      return rawHtml;
+    }
+  }
+
   // Enable Vite middleware in dev, serve static build in prod
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
@@ -216,86 +344,6 @@ async function startServer() {
       appType: 'spa',
     });
     app.use(vite.middlewares);
-
-    // Dynamic OpenGraph / Twitter Cards / Title injection for Card links
-    function injectCardMeta(rawHtml: string, reqUrl: string, host: string): string {
-      try {
-        const urlObj = new URL(reqUrl, `https://${host}`);
-        const pathname = urlObj.pathname;
-        
-        let cardId = '';
-        if (pathname.startsWith('/card/') || pathname.startsWith('/visiting-card/') || pathname.startsWith('/vcard/')) {
-          cardId = pathname.split('/')[2] || '';
-        } else if (pathname === '/card' || pathname === '/visiting-card' || pathname === '/vcard') {
-          cardId = urlObj.searchParams.get('card') || urlObj.searchParams.get('id') || 'sidra-tul-muntaha';
-        }
-
-        if (cardId === 'ceo') cardId = 'sidra-tul-muntaha';
-        if (cardId === 'coo') cardId = 'mehtab-ahmed';
-
-        // Handle Brochure and Profile public URLs
-        if (pathname.includes('brochure') || pathname === '/catalog') {
-          const title = 'Corporate Capabilities Brochure 2026 | SpatioCore Tech';
-          const description = 'Official corporate capabilities brochure of SpatioCore Tech. Explore GIS, remote sensing, satellite data analytics, and geospatial intelligence solutions.';
-          const fullUrl = `https://${host}${pathname}`;
-          return rawHtml
-            .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
-            .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
-            .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
-            .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
-            .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
-        }
-
-        if (pathname.includes('profile')) {
-          const title = 'Official Company Profile | SpatioCore Tech';
-          const description = 'Verified comprehensive company profile of SpatioCore Tech. 16-page executive briefing on satellite data engineering, precision remote sensing, and enterprise geospatial intelligence.';
-          const fullUrl = `https://${host}${pathname}`;
-          return rawHtml
-            .replace(/<title>.*?<\/title>/i, `<title>${title}</title>`)
-            .replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`)
-            .replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`)
-            .replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`)
-            .replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
-        }
-
-        if (!cardId) return rawHtml;
-
-        const cardsJsonPath = path.resolve(process.cwd(), 'src/data/businessCards.json');
-        if (!fs.existsSync(cardsJsonPath)) return rawHtml;
-        const cards = JSON.parse(fs.readFileSync(cardsJsonPath, 'utf-8'));
-        const card = cards.find((c: any) => c.id === cardId) || cards[0];
-        if (!card) return rawHtml;
-
-        const title = `${card.name} | ${card.title} – SpatioCore Tech`;
-        const description = `Official verified digital visiting card for ${card.name}, ${card.title} at SpatioCore Tech. Connect via WhatsApp (${card.phone}) or Email (${card.email}). Where Earth Data Meets Smart Solutions.`;
-        const fullUrl = `https://${host}${pathname}`;
-        const imageUrl = `https://${host}/images/og-visiting-card.svg`;
-
-        let updated = rawHtml;
-        // Replace title
-        updated = updated.replace(/<title>.*?<\/title>/i, `<title>${title}</title>`);
-        // Replace description
-        updated = updated.replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/i, `<meta name="description" content="${description}" />`);
-        // Replace og:title
-        updated = updated.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`);
-        // Replace og:description
-        updated = updated.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`);
-        // Replace og:url
-        updated = updated.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, `<meta property="og:url" content="${fullUrl}" />`);
-        // Replace og:image
-        updated = updated.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, `<meta property="og:image" content="${imageUrl}" />`);
-        // Replace twitter:title
-        updated = updated.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:title" content="${title}" />`);
-        // Replace twitter:description
-        updated = updated.replace(/<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:description" content="${description}" />`);
-        // Replace twitter:image
-        updated = updated.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:image" content="${imageUrl}" />`);
-
-        return updated;
-      } catch (e) {
-        return rawHtml;
-      }
-    }
 
     // SPA support in development: fallback to index.html for navigation routes
     app.get('*', async (req, res, next) => {
@@ -309,7 +357,7 @@ async function startServer() {
         // Apply Vite HTML transforms (injects HMR client, styles, etc.)
         html = await vite.transformIndexHtml(req.originalUrl, html);
         const host = req.get('host') || 'localhost:3000';
-        html = injectCardMeta(html, req.originalUrl, host);
+        html = injectPublicPageMeta(html, req.originalUrl, host);
         res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
       } catch (err) {
         next(err);
@@ -323,26 +371,7 @@ async function startServer() {
         const indexHtmlPath = path.join(distPath, 'index.html');
         let html = await fs.promises.readFile(indexHtmlPath, 'utf-8');
         const host = req.get('host') || 'localhost:3000';
-        // Dynamic Meta in production
-        if (req.originalUrl.includes('card')) {
-          const cardsJsonPath = path.resolve(process.cwd(), 'src/data/businessCards.json');
-          if (fs.existsSync(cardsJsonPath)) {
-            const cards = JSON.parse(fs.readFileSync(cardsJsonPath, 'utf-8'));
-            let cardId = req.originalUrl.split('/')[2] || 'sidra-tul-muntaha';
-            if (cardId === 'ceo') cardId = 'sidra-tul-muntaha';
-            if (cardId === 'coo') cardId = 'mehtab-ahmed';
-            const card = cards.find((c: any) => c.id === cardId) || cards[0];
-            if (card) {
-              const title = `${card.name} | ${card.title} – SpatioCore Tech`;
-              const description = `Official verified digital visiting card for ${card.name}, ${card.title} at SpatioCore Tech. Connect via WhatsApp (${card.phone}) or Email (${card.email}).`;
-              html = html.replace(/<title>.*?<\/title>/i, `<title>${title}</title>`);
-              html = html.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, `<meta property="og:title" content="${title}" />`);
-              html = html.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, `<meta property="og:description" content="${description}" />`);
-              html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, `<meta property="og:image" content="https://${host}/images/og-visiting-card.svg" />`);
-              html = html.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/i, `<meta name="twitter:title" content="${title}" />`);
-            }
-          }
-        }
+        html = injectPublicPageMeta(html, req.originalUrl, host);
         res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
       } catch {
         res.sendFile(path.join(distPath, 'index.html'));

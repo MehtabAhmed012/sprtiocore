@@ -157,9 +157,14 @@ export default function App() {
                 {/* Official Public Identity Portal Routes (Direct URLs for Browser Address Bar & QR Scanning) */}
                 <Route path="/portal" element={<PortalHome />} />
                 <Route path="/identity" element={<PortalHome />} />
+                <Route path="/id-portal" element={<PortalHome />} />
+                <Route path="/client-portal" element={<PortalHome />} />
+                <Route path="/identity-portal" element={<PortalHome />} />
+                <Route path="/portal/identity" element={<PortalHome />} />
+                <Route path="/portal/home" element={<PortalHome />} />
                 <Route path="/qr" element={<PortalHome />} />
 
-                {/* Business Cards & Visiting Cards Public Routes */}
+                {/* Business Cards & Visiting Cards Public Routes (Index & Individual Personnel Links) */}
                 <Route path="/business-cards" element={<BusinessCardsPage />} />
                 <Route path="/business-card" element={<BusinessCardsPage />} />
                 <Route path="/cards" element={<BusinessCardsPage />} />
@@ -167,29 +172,44 @@ export default function App() {
                 <Route path="/visitingcards" element={<BusinessCardsPage />} />
                 <Route path="/card" element={<DirectVisitingCard />} />
                 <Route path="/card/:id" element={<DirectVisitingCard />} />
+                <Route path="/cards/:id" element={<DirectVisitingCard />} />
                 <Route path="/card/ceo" element={<DirectVisitingCard defaultCardId="sidra-tul-muntaha" />} />
                 <Route path="/card/coo" element={<DirectVisitingCard defaultCardId="mehtab-ahmed" />} />
                 <Route path="/visiting-card" element={<DirectVisitingCard />} />
                 <Route path="/visitingcard" element={<DirectVisitingCard />} />
                 <Route path="/visiting-card/:id" element={<DirectVisitingCard />} />
+                <Route path="/visitingcards/:id" element={<DirectVisitingCard />} />
+                <Route path="/visitingcard/:id" element={<DirectVisitingCard />} />
+                <Route path="/business-card/:id" element={<DirectVisitingCard />} />
+                <Route path="/business-cards/:id" element={<DirectVisitingCard />} />
                 <Route path="/vcard" element={<DirectVisitingCard />} />
                 <Route path="/vcard/:id" element={<DirectVisitingCard />} />
                 <Route path="/vcards" element={<BusinessCardsPage />} />
 
-                {/* Brochures Public Direct URLs */}
+                {/* Brochures Public Direct URLs (Including typo tolerance like /brouchure, /borcher) */}
                 <Route path="/brochures" element={<BrochuresPage />} />
                 <Route path="/brochure" element={<BrochuresPage />} />
+                <Route path="/brouchure" element={<BrochuresPage />} />
+                <Route path="/brouchures" element={<BrochuresPage />} />
+                <Route path="/borcher" element={<BrochuresPage />} />
+                <Route path="/borchure" element={<BrochuresPage />} />
                 <Route path="/corporate/brochure" element={<BrochuresPage />} />
                 <Route path="/corporate-brochure" element={<BrochuresPage />} />
                 <Route path="/catalog" element={<BrochuresPage />} />
+                <Route path="/brochure/widespread" element={<BrochuresPage />} />
+                <Route path="/brochures/widespread" element={<BrochuresPage />} />
 
-                {/* Profiles & Corporate Profiles Public Direct URLs */}
+                {/* Profiles & Corporate Profiles Public Direct URLs (Including typo tolerance like /porfile, /porfiles) */}
                 <Route path="/profiles" element={<ProfilesPage />} />
                 <Route path="/profile" element={<ProfilesPage />} />
+                <Route path="/porfile" element={<ProfilesPage />} />
+                <Route path="/porfiles" element={<ProfilesPage />} />
                 <Route path="/corporate/profile" element={<ProfilesPage />} />
                 <Route path="/corporate/profie" element={<ProfilesPage />} />
                 <Route path="/corporate-profile" element={<ProfilesPage />} />
                 <Route path="/company-profile" element={<ProfilesPage />} />
+                <Route path="/profile/widespread" element={<ProfilesPage />} />
+                <Route path="/profiles/widespread" element={<ProfilesPage />} />
 
                 {/* Subpages with Corporate Header & Footer */}
                 <Route 
