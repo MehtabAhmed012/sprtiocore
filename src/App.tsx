@@ -186,9 +186,11 @@ export default function App() {
                 <Route path="/vcard/:id" element={<DirectVisitingCard />} />
                 <Route path="/vcards" element={<BusinessCardsPage />} />
 
-                {/* Brochures Public Direct URLs (Including typo tolerance like /brouchure, /borcher) */}
+                {/* Brochures Public Direct URLs (Including typo tolerance like /brouchure, /borcher and item :id like careers) */}
                 <Route path="/brochures" element={<BrochuresPage />} />
                 <Route path="/brochure" element={<BrochuresPage />} />
+                <Route path="/brochure/:id" element={<BrochuresPage />} />
+                <Route path="/brochures/:id" element={<BrochuresPage />} />
                 <Route path="/brouchure" element={<BrochuresPage />} />
                 <Route path="/brouchures" element={<BrochuresPage />} />
                 <Route path="/borcher" element={<BrochuresPage />} />
@@ -199,9 +201,11 @@ export default function App() {
                 <Route path="/brochure/widespread" element={<BrochuresPage />} />
                 <Route path="/brochures/widespread" element={<BrochuresPage />} />
 
-                {/* Profiles & Corporate Profiles Public Direct URLs (Including typo tolerance like /porfile, /porfiles) */}
+                {/* Profiles & Corporate Profiles Public Direct URLs (Including typo tolerance like /porfile, /porfiles and item :id like careers) */}
                 <Route path="/profiles" element={<ProfilesPage />} />
                 <Route path="/profile" element={<ProfilesPage />} />
+                <Route path="/profile/:id" element={<ProfilesPage />} />
+                <Route path="/profiles/:id" element={<ProfilesPage />} />
                 <Route path="/porfile" element={<ProfilesPage />} />
                 <Route path="/porfiles" element={<ProfilesPage />} />
                 <Route path="/corporate/profile" element={<ProfilesPage />} />
