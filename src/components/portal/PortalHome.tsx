@@ -16,10 +16,7 @@ import {
   ShieldCheck, 
   QrCode, 
   Sparkles,
-  Eye,
-  Lock,
-  FolderTree,
-  Maximize2
+  FolderTree
 } from 'lucide-react';
 import PortalHeader from './PortalHeader';
 import PortalFooter from './PortalFooter';
@@ -34,7 +31,6 @@ export default function PortalHome() {
   const [isQrScreenOpen, setIsQrScreenOpen] = useState(false);
   const [barcodeModalItem, setBarcodeModalItem] = useState<IdentityItemMeta | null>(null);
   const defaultPage = OFFICIAL_PDF_CATALOG.landerConfiguration.defaultPage;
-  const activeBrochure = BROCHURES_DATA.find(b => !b.isComingSoon);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1e] text-slate-800 dark:text-slate-100 flex flex-col font-sans transition-colors">
@@ -54,96 +50,6 @@ export default function PortalHome() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-5 sm:py-8">
-        
-        {/* ================= DEFAULT LANDER SHOWCASE (UNINDEXED IMAGE) ================= */}
-        {/* Shown as the primary lander page banner when QR code screen opens or on internal links */}
-        <div className="mb-8 rounded-3xl overflow-hidden border-2 border-teal-500/40 bg-gradient-to-br from-[#0c1322] via-[#111c33] to-[#070b14] text-white shadow-[0_12px_40px_rgba(0,201,167,0.15)] relative">
-          
-          {/* Top highlight bar */}
-          <div className="h-1.5 w-full bg-gradient-to-r from-teal-400 via-[#00c9a7] to-amber-400" />
-
-          <div className="p-5 sm:p-7 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6">
-            
-            {/* Left Column: Context & Metadata */}
-            <div className="space-y-4 max-w-xl">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/40 text-[11px] font-mono font-bold tracking-wider uppercase">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-                  <span>DEFAULT LANDER PAGE</span>
-                </span>
-                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[10px] font-mono font-bold tracking-wider uppercase">
-                  <Lock size={11} />
-                  <span>UNINDEXED ASSET · NOINDEX</span>
-                </span>
-              </div>
-
-              <div>
-                <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                  {defaultPage.heading}
-                </h1>
-                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed font-sans">
-                  {defaultPage.description}
-                </p>
-              </div>
-
-              {/* Repository & OpenGraph Specs bar */}
-              <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-700/60 font-mono text-[11px] text-slate-400 space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-teal-400 font-semibold flex items-center gap-1.5">
-                    <FolderTree size={13} />
-                    <span>OfficialPDF/&#123;folder&#125;/&#123;fileName&#125;</span>
-                  </span>
-                  <span className="text-[10px] text-slate-400">JSON-Powered Meta</span>
-                </div>
-                <div className="text-[10px] text-slate-400 truncate">
-                  Active PDF: {activeBrochure?.filePath || '/OfficialPDF/brochures/brochures.pdf'}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex items-center gap-3 flex-wrap pt-1">
-                <Link
-                  to="/brochures"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-display font-black text-xs uppercase tracking-wider transition-all shadow-md active:scale-95"
-                >
-                  <Eye size={15} />
-                  <span>View Official PDF</span>
-                </Link>
-
-                <button
-                  type="button"
-                  onClick={() => setIsQrScreenOpen(true)}
-                  className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs font-semibold transition-all cursor-pointer hover:text-white"
-                >
-                  <QrCode size={15} className="text-teal-400" />
-                  <span>Open QR Code Screen</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column: Interactive Thumbnail of the Default Unindexed Image */}
-            <div 
-              onClick={() => setIsQrScreenOpen(true)}
-              className="w-full lg:w-[420px] rounded-2xl overflow-hidden border border-teal-500/40 shadow-xl cursor-pointer group relative select-none transform transition-all duration-300 hover:scale-[1.02]"
-              title="Click to expand QR Code Destination Screen"
-            >
-              <img
-                src={defaultPage.defaultImage}
-                alt="SpatioCore Tech Official Default Lander - Unindexed"
-                className="w-full h-auto object-cover group-hover:brightness-105 transition-all"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end justify-between p-3">
-                <div className="text-[10px] font-mono text-teal-300 bg-slate-950/90 px-2 py-1 rounded border border-teal-500/30">
-                  Unindexed Internal Image Asset
-                </div>
-                <div className="p-1.5 rounded-lg bg-teal-500 text-slate-950 shadow">
-                  <Maximize2 size={13} />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
 
         {/* FAST-LANE BANNER: Scanned Visiting Card Direct Access */}
         <div className="mb-6 bg-gradient-to-r from-teal-500/15 via-emerald-500/10 to-blue-500/15 rounded-2xl p-4 sm:p-5 border-2 border-teal-500/40 dark:border-teal-500/40 shadow-[0_8px_30px_rgba(0,201,167,0.12)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
