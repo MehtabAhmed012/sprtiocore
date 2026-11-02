@@ -67,8 +67,14 @@ function SPAQueryRouter() {
     const params = new URLSearchParams(window.location.search);
     const goto = params.get('goto');
     if (goto) {
-      window.history.replaceState(null, '', goto);
-      navigate(goto, { replace: true });
+      try {
+        const decodedGoto = decodeURIComponent(goto);
+        window.history.replaceState(null, '', decodedGoto);
+        navigate(decodedGoto, { replace: true });
+      } catch {
+        window.history.replaceState(null, '', goto);
+        navigate(goto, { replace: true });
+      }
     }
   }, [navigate]);
 

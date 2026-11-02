@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!api/|OfficialPDF/|documents/|images/|assets/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
