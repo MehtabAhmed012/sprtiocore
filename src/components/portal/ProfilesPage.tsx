@@ -6,10 +6,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  UserCheck, 
-  ShieldCheck, 
-  Eye, 
-  Check, 
   Clock, 
   ZoomIn, 
   ZoomOut, 
@@ -17,13 +13,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Download,
-  Copy,
-  ArrowRight,
-  Satellite,
-  QrCode,
-  FileText,
-  CreditCard,
-  Briefcase
+  Satellite
 } from 'lucide-react';
 import PortalHeader from './PortalHeader';
 import PortalFooter from './PortalFooter';
@@ -31,11 +21,9 @@ import SEOHead from './SEOHead';
 import { ProfilePreview } from './DocumentPreviews';
 import { PROFILES_DATA, Profile } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
-import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function ProfilesPage() {
   const { id } = useParams<{ id?: string }>();
-  const [copiedLink, setCopiedLink] = useState<string | null>(null);
   const [barcodeItem, setBarcodeItem] = useState<IdentityItemMeta | null>(null);
   const [zoomLevel, setZoomLevel] = useState<number>(100);
   const [activeSpreadIndex, setActiveSpreadIndex] = useState<number>(0);
@@ -54,12 +42,6 @@ export default function ProfilesPage() {
     }
   }, [id]);
 
-  const copyToClipboard = (text: string, label: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedLink(label);
-    setTimeout(() => setCopiedLink(null), 2500);
-  };
-
   const pageImages = currentProfile.pageImages || [
     '/OfficialPDF/corporate/profile-page-1.png',
     '/OfficialPDF/corporate/profile-page-2.png'
@@ -67,55 +49,6 @@ export default function ProfilesPage() {
 
   // Group pages into two-page facing spreads
   const totalSpreads = Math.ceil(pageImages.length / 2);
-
-  // Direct public links accessible via profile
-  const directPublicResources = [
-    {
-      title: 'Geospatial Capabilities Brochure 2026',
-      category: 'Capabilities Dossier',
-      code: 'SC-PUB-BROCHURE-2026',
-      description: 'Official capabilities brochure covering GIS platforms, remote sensing analytics, and Pakistan climate case studies in wide spread format.',
-      path: '/brochure',
-      icon: FileText,
-      color: 'teal'
-    },
-    {
-      title: 'Sidra Tul Muntaha — Chief Executive Officer (CEO)',
-      category: 'Executive Visiting Card',
-      code: 'SC-ID-CEO-01',
-      description: 'Official verified digital visiting card for CEO. Access executive strategy, international partnerships, WhatsApp, and phone.',
-      path: '/card/ceo',
-      icon: CreditCard,
-      color: 'teal'
-    },
-    {
-      title: 'Mehtab Ahmed — Chief Operating Officer (COO)',
-      category: 'Executive Visiting Card',
-      code: 'SC-ID-COO-02',
-      description: 'Official verified digital visiting card for COO. Lead geospatial architect, satellite telemetry, and enterprise GIS operations.',
-      path: '/card/coo',
-      icon: CreditCard,
-      color: 'teal'
-    },
-    {
-      title: 'Global Careers & Opportunities Portal',
-      category: 'Talent Pool & Openings',
-      code: 'SC-CAREERS-2026',
-      description: 'Explore open engineering positions, structured internship programs, and career pathways in Earth observation and GIS science.',
-      path: '/careers',
-      icon: Briefcase,
-      color: 'amber'
-    },
-    {
-      title: 'SpatioCore Tech Public Identity & QR Portal',
-      category: 'Central Identity Gateway',
-      code: 'SC-PORTAL-HUB-2026',
-      description: 'Central verified repository hosting all business cards, publications, and institutional credentials with QR verification.',
-      path: '/portal',
-      icon: ShieldCheck,
-      color: 'teal'
-    }
-  ];
 
   const currentLeftPageIdx = activeSpreadIndex * 2;
   const currentRightPageIdx = activeSpreadIndex * 2 + 1;
@@ -138,17 +71,9 @@ export default function ProfilesPage() {
         backLabel="Return to Identity Portal" 
       />
 
-      {/* Copy Toast Notification */}
-      {copiedLink && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white dark:bg-teal-500 dark:text-slate-950 px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-mono animate-in slide-in-from-bottom-5">
-          <Check size={16} />
-          <span>Copied: {copiedLink}</span>
-        </div>
-      )}
-
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-10">
         
-        {/* ================= HERO HEADER (CAREERS STYLE) ================= */}
+        {/* ================= HERO HEADER ================= */}
         <section className="border-b border-slate-200 dark:border-slate-800 pb-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-2">
@@ -169,49 +94,12 @@ export default function ProfilesPage() {
               <a
                 href={currentProfile.filePath}
                 download
-                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-display font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
+                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-display font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
               >
                 <Download size={14} />
                 <span>Download PDF</span>
               </a>
-              <button
-                type="button"
-                onClick={() => setBarcodeItem({
-                  id: currentProfile.id,
-                  code: currentProfile.code || 'SC-DOC-PROFILE-2026',
-                  title: currentProfile.name,
-                  subtitle: 'Official 16-Page Enterprise Dossier - 2026 Edition',
-                  type: 'profile',
-                  targetPath: '/profile',
-                  department: 'Corporate Governance & Geospatial Architecture'
-                })}
-                className="bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-teal-400 border border-teal-500/40 px-3.5 py-2.5 rounded-xl font-mono text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer"
-                title="Download Barcode & QR Code Badge"
-              >
-                <QrCode size={14} />
-                <span>Scan Badge</span>
-              </button>
             </div>
-          </div>
-
-          {/* Direct Public Link Share Bar */}
-          <div className="mt-5">
-            <PublicLinkShareBar 
-              title={currentProfile.name}
-              path="/profile"
-              code={currentProfile.code || 'SC-DOC-PROFILE-2026'}
-              categoryLabel="Company Profile Direct Public URL"
-              aliases={['/profile', '/profiles', `/profile/${currentProfile.id}`, '/company-profile', '/porfile', '/porfiles']}
-              onOpenBarcodeModal={() => setBarcodeItem({
-                id: currentProfile.id,
-                code: currentProfile.code || 'SC-DOC-PROFILE-2026',
-                title: currentProfile.name,
-                subtitle: 'Official 16-Page Enterprise Dossier - 2026 Edition',
-                type: 'profile',
-                targetPath: '/profile',
-                department: 'Corporate Governance & Geospatial Architecture'
-              })}
-            />
           </div>
         </section>
 
@@ -384,79 +272,7 @@ export default function ProfilesPage() {
           </div>
         </section>
 
-        {/* ================= DIRECT PUBLIC RESOURCES VIA PROFILE (CAREERS STYLE) ================= */}
-        <section className="space-y-6 pt-4" id="direct-public-links">
-          <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
-            <span className="text-teal-600 dark:text-teal-400 font-mono text-xs font-bold uppercase tracking-wider block mb-1">
-              [ DIRECT PUBLIC ASSETS MATRIX ]
-            </span>
-            <h2 className="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase">
-              All Public Links Accessible Direct via Company Profile
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
-              Connect directly with verified corporate publications, visiting cards, executive personnel, and careers openings.
-            </p>
-          </div>
 
-          <div className="space-y-4">
-            {directPublicResources.map((res) => {
-              const fullUrl = `${typeof window !== 'undefined' ? window.location.origin : 'https://spatiocore.com'}${res.path}`;
-
-              return (
-                <div
-                  key={res.code}
-                  className="group relative bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-5"
-                >
-                  <div className="space-y-2 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[10px] font-mono tracking-wider font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 px-2 py-0.5 rounded uppercase">
-                        {res.category}
-                      </span>
-                      <span className="text-[10px] font-mono tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-2 py-0.5 rounded uppercase">
-                        {res.code}
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                      {res.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-                      {res.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
-                      <span className="text-slate-400">Direct URL:</span>
-                      <span className="text-teal-600 dark:text-teal-400 font-bold select-all bg-slate-100 dark:bg-slate-900 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800">
-                        {res.path}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 shrink-0">
-                    <button
-                      type="button"
-                      onClick={() => copyToClipboard(fullUrl, res.title)}
-                      className="p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                      title="Copy Direct URL"
-                      aria-label="Copy Direct URL"
-                    >
-                      <Copy size={16} />
-                    </button>
-
-                    <Link
-                      to={res.path}
-                      className="inline-flex items-center gap-2 bg-slate-900 hover:bg-teal-600 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 px-5 py-3 rounded-xl font-display font-black text-xs uppercase tracking-wider transition-all duration-200 shadow-sm active:scale-95"
-                    >
-                      <span>Open Direct</span>
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
 
         {/* ================= RELATED PROFILES CATALOG ================= */}
         <section className="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800">

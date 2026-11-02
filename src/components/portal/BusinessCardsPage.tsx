@@ -31,7 +31,6 @@ import SEOHead from './SEOHead';
 import { BusinessCardPreview } from './DocumentPreviews';
 import { BUSINESS_CARDS_DATA, BusinessCard, ORGANIZATION_CONFIG } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
-import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function BusinessCardsPage() {
   const [searchParams] = useSearchParams();
@@ -174,24 +173,6 @@ export default function BusinessCardsPage() {
       )}
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-4 sm:py-8">
-        
-        {/* Direct Public Link & Share Bar for the Cards Directory */}
-        <PublicLinkShareBar 
-          title="Official Business & Visiting Cards Registry"
-          path="/cards"
-          code="SC-DIR-CARDS-2026"
-          categoryLabel="Visiting Cards Hub Public URL"
-          aliases={['/cards', '/business-cards', '/visiting-cards', '/card/ceo', '/card/coo']}
-          onOpenBarcodeModal={() => setBarcodeModalItem({
-            id: activeCard.id,
-            code: activeCard.code || `SC-ID-${activeCard.id.toUpperCase()}`,
-            title: `${activeCard.name} — Visiting Card`,
-            subtitle: `${activeCard.title} | ${activeCard.department}`,
-            type: 'visiting_card',
-            targetPath: `/card/${activeCard.id}`
-          })}
-          className="mb-6"
-        />
 
         {/* ========================================================================= */}
         {/* DIRECT VISITING CARD ACTIVE STAGE (OPEN DIRECTLY ON SCREEN) */}

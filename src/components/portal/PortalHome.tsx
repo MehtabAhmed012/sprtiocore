@@ -29,7 +29,6 @@ import QRCodeScreenModal from './QRCodeScreenModal';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
 import { BusinessCardPreview, BrochurePreview, ProfilePreview } from './DocumentPreviews';
 import { ORGANIZATION_CONFIG, BUSINESS_CARDS_DATA, BROCHURES_DATA, PROFILES_DATA, OFFICIAL_PDF_CATALOG } from '../../data/portalData';
-import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function PortalHome() {
   const [isQrScreenOpen, setIsQrScreenOpen] = useState(false);
@@ -56,25 +55,6 @@ export default function PortalHome() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-5 sm:py-8">
         
-        {/* Direct Public Link Share Bar */}
-        <PublicLinkShareBar 
-          title="SpatioCore Tech Public Identity & Resource Portal"
-          path="/portal"
-          code="SC-PORTAL-HUB-2026"
-          categoryLabel="Portal Direct Public URL"
-          aliases={['/portal', '/identity', '/cards', '/brochures', '/profiles']}
-          onOpenBarcodeModal={() => setBarcodeModalItem({
-            id: 'spatiocoretech-identity-portal',
-            code: 'SC-PORTAL-HUB-2026',
-            title: 'SpatioCore Tech Public Identity Portal',
-            subtitle: 'Central Hub for Verified Cards, Brochures & Profiles',
-            type: 'portal',
-            targetPath: '/portal',
-            department: 'Corporate Governance & Geospatial Identity'
-          })}
-          className="mb-6"
-        />
-
         {/* ================= DEFAULT LANDER SHOWCASE (UNINDEXED IMAGE) ================= */}
         {/* Shown as the primary lander page banner when QR code screen opens or on internal links */}
         <div className="mb-8 rounded-3xl overflow-hidden border-2 border-teal-500/40 bg-gradient-to-br from-[#0c1322] via-[#111c33] to-[#070b14] text-white shadow-[0_12px_40px_rgba(0,201,167,0.15)] relative">

@@ -10,7 +10,6 @@ const navLinks = [
   { name: 'Services', href: '/#services' },
   { name: 'Portfolio', href: '/#portfolio' },
   { name: 'Industries', href: '/#sectors' },
-  { name: 'Portal', href: '/portal' },
   { name: 'Blog', href: '/blog' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/#contact' },
@@ -62,17 +61,9 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = link.href === '/portal' 
-              ? (
-                  location.pathname === '/portal' || 
-                  location.pathname === '/identity' || 
-                  location.pathname.startsWith('/card') || 
-                  location.pathname.startsWith('/brochure') || 
-                  location.pathname.startsWith('/profile')
-                )
-              : (link.href.startsWith('/#') 
-                  ? location.pathname === '/' && location.hash === link.href.replace('/', '')
-                  : location.pathname === link.href);
+            const isActive = link.href.startsWith('/#') 
+              ? location.pathname === '/' && location.hash === link.href.replace('/', '')
+              : location.pathname === link.href;
 
             return (
               <Link 

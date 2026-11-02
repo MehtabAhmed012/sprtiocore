@@ -35,7 +35,6 @@ import SEOHead from './SEOHead';
 import { BrochurePreview } from './DocumentPreviews';
 import { BROCHURES_DATA, Brochure } from '../../data/portalData';
 import IdentityBarcodeQRModal, { IdentityItemMeta } from './IdentityBarcodeQRModal';
-import PublicLinkShareBar from './PublicLinkShareBar';
 
 export default function BrochuresPage() {
   const { id } = useParams<{ id?: string }>();
@@ -73,55 +72,6 @@ export default function BrochuresPage() {
   const pageImages = currentBrochure.pageImages || [
     '/OfficialPDF/brochures/brochure-page-1.png',
     '/OfficialPDF/brochures/brochure-page-2.png'
-  ];
-
-  // Direct public links accessible via brochure (styled identically to careers listing)
-  const directPublicResources = [
-    {
-      title: 'Sidra Tul Muntaha — Chief Executive Officer (CEO)',
-      category: 'Executive Visiting Card',
-      code: 'SC-ID-CEO-01',
-      description: 'Official verified digital visiting card for CEO. Access executive strategy, international partnerships, WhatsApp, and phone.',
-      path: '/card/ceo',
-      icon: CreditCard,
-      color: 'teal'
-    },
-    {
-      title: 'Mehtab Ahmed — Chief Operating Officer (COO)',
-      category: 'Executive Visiting Card',
-      code: 'SC-ID-COO-02',
-      description: 'Official verified digital visiting card for COO. Lead geospatial architect, satellite telemetry, and enterprise GIS operations.',
-      path: '/card/coo',
-      icon: CreditCard,
-      color: 'teal'
-    },
-    {
-      title: 'SpatioCore Tech Official Company Profile',
-      category: 'Institutional Dossier',
-      code: 'SC-DOC-PROFILE-V1',
-      description: '16-page verified comprehensive company profile covering corporate standing, GIS services, and Earth observation case studies.',
-      path: '/profile',
-      icon: UserCheck,
-      color: 'blue'
-    },
-    {
-      title: 'Global Careers & Opportunities Portal',
-      category: 'Talent Pool & Openings',
-      code: 'SC-CAREERS-2026',
-      description: 'Explore open engineering positions, structured internship programs, and career pathways in Earth observation and GIS science.',
-      path: '/careers',
-      icon: Briefcase,
-      color: 'amber'
-    },
-    {
-      title: 'SpatioCore Tech Public Identity & QR Portal',
-      category: 'Central Identity Gateway',
-      code: 'SC-PORTAL-HUB-2026',
-      description: 'Central verified repository hosting all business cards, publications, and institutional credentials with QR verification.',
-      path: '/portal',
-      icon: ShieldCheck,
-      color: 'teal'
-    }
   ];
 
   return (
@@ -169,54 +119,17 @@ export default function BrochuresPage() {
               </p>
             </div>
 
-            {/* Quick Actions */}
+            {/* Download PDF Action */}
             <div className="flex items-center gap-2 shrink-0">
               <a
                 href={currentBrochure.filePath}
                 download
-                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-display font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
+                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-display font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
               >
                 <Download size={14} />
                 <span>Download PDF</span>
               </a>
-              <button
-                type="button"
-                onClick={() => setBarcodeItem({
-                  id: currentBrochure.id,
-                  code: currentBrochure.code || 'SC-PUB-BROCHURE-2026',
-                  title: currentBrochure.title,
-                  subtitle: 'Official Corporate Capabilities Catalog - 2026 Edition',
-                  type: 'brochure',
-                  targetPath: '/brochure',
-                  department: 'Corporate Communications & Technical Services'
-                })}
-                className="bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-teal-400 border border-teal-500/40 px-3.5 py-2.5 rounded-xl font-mono text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer"
-                title="Download Barcode & QR Code Badge"
-              >
-                <QrCode size={14} />
-                <span>Scan Badge</span>
-              </button>
             </div>
-          </div>
-
-          {/* Direct Public Link Share Bar */}
-          <div className="mt-5">
-            <PublicLinkShareBar 
-              title={currentBrochure.title}
-              path="/brochure"
-              code={currentBrochure.code || 'SC-PUB-BROCHURE-2026'}
-              categoryLabel="Brochure Direct Public URL"
-              aliases={['/brochure', '/brochures', `/brochure/${currentBrochure.id}`, '/catalog', '/brouchure', '/borcher']}
-              onOpenBarcodeModal={() => setBarcodeItem({
-                id: currentBrochure.id,
-                code: currentBrochure.code || 'SC-PUB-BROCHURE-2026',
-                title: currentBrochure.title,
-                subtitle: 'Official Corporate Capabilities Catalog - 2026 Edition',
-                type: 'brochure',
-                targetPath: '/brochure',
-                department: 'Corporate Communications & Technical Services'
-              })}
-            />
           </div>
         </section>
 
@@ -335,84 +248,6 @@ export default function BrochuresPage() {
 
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* ================= DIRECT PUBLIC RESOURCES VIA BROCHURE (CAREERS STYLE) ================= */}
-        {/* Allows immediate one-click navigation to all official public assets mentioned in brochure */}
-        <section className="space-y-6 pt-4" id="direct-public-links">
-          <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
-            <span className="text-teal-600 dark:text-teal-400 font-mono text-xs font-bold uppercase tracking-wider block mb-1">
-              [ DIRECT PUBLIC ASSETS MATRIX ]
-            </span>
-            <h2 className="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase">
-              All Public Links Accessible Direct via Brochure
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
-              Every identity element, visiting card, executive profile, and careers pathway has its own permanent public URL that opens directly in any browser or QR scan.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {directPublicResources.map((res, idx) => {
-              const IconComp = res.icon;
-              const fullUrl = `${typeof window !== 'undefined' ? window.location.origin : 'https://spatiocore.com'}${res.path}`;
-
-              return (
-                <div
-                  key={res.code}
-                  className="group relative bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-5"
-                >
-                  <div className="space-y-2 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[10px] font-mono tracking-wider font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 px-2 py-0.5 rounded uppercase">
-                        {res.category}
-                      </span>
-                      <span className="text-[10px] font-mono tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-2 py-0.5 rounded uppercase">
-                        {res.code}
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                      {res.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-                      {res.description}
-                    </p>
-
-                    {/* Monospace Direct URL snippet */}
-                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
-                      <span className="text-slate-400">Direct URL:</span>
-                      <span className="text-teal-600 dark:text-teal-400 font-bold select-all bg-slate-100 dark:bg-slate-900 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800">
-                        {res.path}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Actions Column */}
-                  <div className="flex items-center gap-2 shrink-0">
-                    <button
-                      type="button"
-                      onClick={() => copyToClipboard(fullUrl, res.title)}
-                      className="p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                      title="Copy Direct URL"
-                      aria-label="Copy Direct URL"
-                    >
-                      <Copy size={16} />
-                    </button>
-
-                    <Link
-                      to={res.path}
-                      className="inline-flex items-center gap-2 bg-slate-900 hover:bg-teal-600 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 px-5 py-3 rounded-xl font-display font-black text-xs uppercase tracking-wider transition-all duration-200 shadow-sm active:scale-95"
-                    >
-                      <span>Open Direct</span>
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </section>
 
