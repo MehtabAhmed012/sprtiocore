@@ -3,22 +3,36 @@ import { Linkedin, Mail } from 'lucide-react';
 
 const team = [
   { 
-    name: 'Dr. Sarah Chen', 
-    role: 'Principal RS Scientist', 
-    bio: 'PhD in Earth Observation. Former NASA collaborator with 15+ years experience in multi-sensor data fusion and carbon sequestration modeling.',
-    img: 'https://i.pravatar.cc/300?u=sarah' 
+    name: 'Sidra Tul Muntaha', 
+    role: 'Chief Executive Officer (CEO)', 
+    bio: 'Directing global corporate governance, international earth data partnerships, and enterprise geospatial strategy for SpatioCore Tech.',
+    img: '',
+    linkedin: 'https://www.linkedin.com/company/spatiocoretech',
+    email: 'Insights.spatiocoretech@outlook.com'
   },
   { 
-    name: 'Marcus Thorne', 
-    role: 'Lead GIS Architect', 
-    bio: 'Certified Esri professional specialized in deploying high-availability Enterprise GIS infrastructures and custom Python-based automation workflows.',
-    img: 'https://i.pravatar.cc/300?u=marcus' 
+    name: 'Mehtab Ahmed', 
+    role: 'Chief Operating Officer (COO)', 
+    bio: 'Lead Geospatial Architect & COO. Pioneering satellite remote sensing pipelines, enterprise GIS infrastructure, and earth observation modeling.',
+    img: '',
+    linkedin: 'https://www.linkedin.com/company/spatiocoretech',
+    email: 'Insights.spatiocoretech@outlook.com'
   },
   { 
-    name: 'Elena Rodriguez', 
-    role: 'Geological Engineer', 
-    bio: 'Expert in 3D subsurface modeling and slope stability. Leading our geological risk assessment division for international large-scale infrastructure projects.',
-    img: 'https://i.pravatar.cc/300?u=elena' 
+    name: 'Sarah Al-Mansoor', 
+    role: 'Senior RS Analyst', 
+    bio: 'Specializing in multi-spectral satellite imagery, Google Earth Engine workflows, vegetation index anomalies (NDVI/EVI), and radar change detection.',
+    img: '',
+    linkedin: 'https://www.linkedin.com/company/spatiocoretech',
+    email: 'Insights.spatiocoretech@outlook.com'
+  },
+  { 
+    name: 'Engr. David Vance', 
+    role: 'Enterprise GIS Director', 
+    bio: 'Directing high-availability spatial database implementations, Cloud GIS platforms, REST geospatial services, and urban infrastructure systems.',
+    img: '',
+    linkedin: 'https://www.linkedin.com/company/spatiocoretech',
+    email: 'Insights.spatiocoretech@outlook.com'
   },
 ];
 
@@ -43,43 +57,43 @@ export default function Team() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, i) => (
             <div key={member.name} className="group h-[400px] [perspective:1000px]">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
+                transition={{ delay: i * 0.15 }}
                 className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
               >
                 {/* Front */}
                 <div className="absolute inset-0 [backface-visibility:hidden]">
-                  <div className="h-full bg-white/5 dark:bg-card-dark border border-white/10 rounded-3xl overflow-hidden flex flex-col p-8">
-                    <div className="aspect-square w-32 mx-auto rounded-full overflow-hidden border-2 border-primary mb-6 flex items-center justify-center bg-primary/10">
+                  <div className="h-full bg-white/5 dark:bg-card-dark border border-white/10 rounded-3xl overflow-hidden flex flex-col p-6">
+                    <div className="aspect-square w-28 mx-auto rounded-full overflow-hidden border-2 border-primary mb-5 flex items-center justify-center bg-primary/10">
                       {member.img && member.img.trim() ? (
                         <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
                       ) : (
-                        <span className="text-primary font-bold font-display uppercase text-xs">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                        <span className="text-primary font-bold font-display uppercase text-sm">{member.name.split(' ').map(n => n[0]).join('')}</span>
                       )}
                     </div>
                     <div className="text-center mt-auto">
-                      <h3 className="font-display text-xl font-bold mb-2">{member.name}</h3>
-                      <p className="text-primary font-mono text-xs uppercase tracking-widest">{member.role}</p>
+                      <h3 className="font-display text-lg font-bold mb-1.5">{member.name}</h3>
+                      <p className="text-primary font-mono text-[11px] uppercase tracking-wider">{member.role}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Back */}
                 <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <div className="h-full bg-primary text-bg-dark rounded-3xl p-8 flex flex-col justify-center text-center">
-                    <h3 className="font-display text-xl font-bold mb-4">{member.name}</h3>
-                    <p className="text-sm font-medium mb-8 leading-relaxed italic">
+                  <div className="h-full bg-primary text-bg-dark rounded-3xl p-6 flex flex-col justify-center text-center">
+                    <h3 className="font-display text-lg font-bold mb-3">{member.name}</h3>
+                    <p className="text-xs font-medium mb-6 leading-relaxed italic">
                       "{member.bio}"
                     </p>
-                    <div className="flex justify-center gap-4 mt-auto">
-                      <a href="#" className="p-3 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Linkedin size={20} /></a>
-                      <a href="#" className="p-3 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Mail size={20} /></a>
+                    <div className="flex justify-center gap-3 mt-auto">
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Linkedin size={18} /></a>
+                      <a href={`mailto:${member.email}`} className="p-2.5 bg-bg-base text-white rounded-full hover:scale-110 transition-transform"><Mail size={18} /></a>
                     </div>
                   </div>
                 </div>

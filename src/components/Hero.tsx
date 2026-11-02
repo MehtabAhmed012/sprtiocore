@@ -86,12 +86,12 @@ export default function Hero({ onOpenQuote }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-5 mb-20"
+            className="flex flex-wrap gap-4 mb-20 items-center"
           >
             <button onClick={onOpenQuote} className="btn-sophisticated btn-primary flex items-center gap-3">
               Request a Quote <ArrowRight size={18} />
             </button>
-            <a href="#portfolio" className="btn-sophisticated btn-outline">
+            <a href="#portfolio" className="btn-sophisticated btn-outline inline-flex">
               View Portfolio
             </a>
           </motion.div>

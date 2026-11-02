@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /company
+Allow: /blog
+Allow: /careers
+Disallow: /images/default-lander-preview.svg
+Disallow: /OfficialPDF/
+Disallow: /card/
+Disallow: /visiting-card
+Disallow: /vcard
+
 Sitemap: https://www.spatiocore.com/sitemap.xml

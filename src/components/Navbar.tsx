@@ -6,12 +6,10 @@ import { useUser } from '../lib/UserContext';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '/#home' },
   { name: 'About', href: '/#about' },
   { name: 'Services', href: '/#services' },
   { name: 'Portfolio', href: '/#portfolio' },
-  { name: 'Industries', href: '/#industries' },
-  // { name: 'Team', href: '/#team' },
+  { name: 'Industries', href: '/#sectors' },
   { name: 'Blog', href: '/blog' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/#contact' },
@@ -61,16 +59,35 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.href}
-              className="text-[12px] font-semibold uppercase tracking-[1px] text-text-muted hover:text-text-base transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = link.href === '/identity' 
+              ? (location.pathname === '/identity' || location.pathname.startsWith('/card'))
+              : (link.href.startsWith('/#') 
+                  ? location.pathname === '/' && location.hash === link.href.replace('/', '')
+                  : location.pathname === link.href);
+
+            return (
+              <Link 
+                key={link.name} 
+                to={link.href}
+                className={`relative py-1 text-[12px] font-semibold uppercase tracking-[1px] transition-colors duration-200 ${
+                  isActive 
+                    ? 'text-primary font-bold drop-shadow-[0_0_8px_rgba(0,201,167,0.4)]' 
+                    : 'text-text-muted hover:text-text-base'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <motion.div 
+                    layoutId="activeNavIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-primary rounded-full shadow-[0_0_8px_rgba(0,201,167,0.8)]"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Actions */}

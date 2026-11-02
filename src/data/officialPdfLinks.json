@@ -1,0 +1,280 @@
+{
+  "repositoryName": "OfficialPDF",
+  "version": "2026.1",
+  "lastUpdated": "2026-11-01T06:10:00Z",
+  "folderStructure": {
+    "root": "/OfficialPDF",
+    "description": "Hierarchical document repository organized by domain category: OfficialPDF/{folder}/{filename}",
+    "folders": [
+      {
+        "folderName": "brochures",
+        "description": "General corporate capabilities, solutions catalogs, and service guides",
+        "allowedTypes": [".pdf"],
+        "path": "/OfficialPDF/brochures"
+      },
+      {
+        "folderName": "technical",
+        "description": "Technical specifications, SAR remote sensing, and engineering documentation",
+        "allowedTypes": [".pdf"],
+        "path": "/OfficialPDF/technical"
+      },
+      {
+        "folderName": "environmental",
+        "description": "Environmental impact assessments, watershed analytics, and carbon audits",
+        "allowedTypes": [".pdf"],
+        "path": "/OfficialPDF/environmental"
+      },
+      {
+        "folderName": "surveying",
+        "description": "Drone LiDAR, photogrammetry, RTK surveys, and 3D terrain modeling",
+        "allowedTypes": [".pdf"],
+        "path": "/OfficialPDF/surveying"
+      },
+      {
+        "folderName": "corporate",
+        "description": "Institutional dossiers, executive profiles, and governance filings",
+        "allowedTypes": [".pdf"],
+        "path": "/OfficialPDF/corporate"
+      }
+    ]
+  },
+  "landerConfiguration": {
+    "defaultPage": {
+      "title": "SpatioCore Tech | Official Digital Identity & PDF Directory",
+      "subtitle": "Scanned via QR Code · Verified Public Identity Gateway",
+      "heading": "Official Corporate & Publication Directory",
+      "description": "Access official SpatioCore Tech corporate brochures, executive cards, and GIS dossiers. High-resolution vector documents authenticated by SpatioCore document registry.",
+      "defaultImage": "/images/default-lander-preview.svg",
+      "unindexed": true,
+      "qrDestination": "/",
+      "metaTags": {
+        "title": "SpatioCore Tech | Official Portal & Documents",
+        "description": "Official verified repository for SpatioCore Tech brochures, executive credentials, and geospatial publications.",
+        "ogTitle": "SpatioCore Tech | Official Verification Portal",
+        "ogDescription": "Access official corporate capabilities brochure, executive credentials, and spatial intelligence portfolios.",
+        "ogImage": "/images/default-lander-preview.svg",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "SpatioCore Tech | Official Portal",
+        "twitterDescription": "Where Earth Data Meets Smart Solutions · Verified Corporate Portal",
+        "twitterImage": "/images/default-lander-preview.svg",
+        "robots": "noindex, nofollow"
+      }
+    }
+  },
+  "files": [
+    {
+      "id": "corporate-capabilities-2026",
+      "folder": "brochures",
+      "fileName": "brochures.pdf",
+      "filePath": "/OfficialPDF/brochures/brochures.pdf",
+      "aliases": ["/OfficialPDF/brochures/SpatioCore_Corporate_Brochure_2026.pdf"],
+      "title": "Geospatial Solutions & Corporate Capabilities",
+      "subtitle": "A Partnership for the Future · Empowering Decisions with Location Intelligence",
+      "category": "Corporate Overview",
+      "status": "active",
+      "isComingSoon": false,
+      "blur": false,
+      "blurAmount": "0%",
+      "pages": 2,
+      "fileSize": "415 KB",
+      "releaseDate": "2026 Edition",
+      "coverImage": "/OfficialPDF/brochures/brochure-cover.png",
+      "pageImages": [
+        "/OfficialPDF/brochures/brochure-page-1.png",
+        "/OfficialPDF/brochures/brochure-page-2.png"
+      ],
+      "tags": ["Capabilities", "Enterprise GIS", "Earth Data", "Remote Sensing"],
+      "description": "Official tri-fold brochure detailing SpatioCore Tech's core competencies in GIS, remote sensing, environmental solutions, and Pakistan climate case studies (Heat Extremes, ISO 14001 EMS, Drought SPI/RDI).",
+      "highlights": [
+        "GIS & Spatial Analysis — Transforming earth analysis into actionable insights",
+        "Remote Sensing Solutions — Multi-source satellite data acquisition & analysis",
+        "Environmental Solutions — Ecosystem and natural resource monitoring",
+        "Applied Sectors — Agriculture, Disaster Management, Urban Planning, Forestry",
+        "Capacity Building — Practical geospatial skills training for organizations"
+      ],
+      "tableOfContents": [
+        "About Us & Innovation Principles",
+        "Core Services: GIS, RS & Environmental",
+        "Applied Sectors & Government Support",
+        "Case Study 01: Heat Extremes Assessment (ETCCDI)",
+        "Case Study 02: Environmental Assessment (ISO 14001 EMS)",
+        "Case Study 03: Southern Pakistan Drought Assessment (SPI/RDI)",
+        "Why Choose SpatioCore Tech & Contact Info"
+      ],
+      "corePillars": [
+        { "title": "Innovation", "desc": "We leverage cutting-edge technology to deliver smarter solutions." },
+        { "title": "Expertise", "desc": "Our team combines domain knowledge with technical excellence." },
+        { "title": "Reliability", "desc": "We ensure accurate data, quality insights, and results." },
+        { "title": "Sustainability", "desc": "Our solutions support sustainable decisions for a more resilient future." },
+        { "title": "Client Satisfaction", "desc": "We prioritize our clients and deliver tailored solutions." }
+      ],
+      "servicesCatalog": [
+        { "title": "GIS & Spatial Analysis", "desc": "Transforming earth analysis into actionable insights." },
+        { "title": "Remote Sensing Solutions", "desc": "Multi-source satellite data acquisition and analysis." },
+        { "title": "Environmental Solutions", "desc": "Monitoring ecosystems and natural resources." },
+        { "title": "Applied Sectors", "desc": "Agriculture, Disaster Management, Urban Planning, Forestry, and Coastal Monitoring." },
+        { "title": "Consulting & Capacity Building", "desc": "Technical consulting and training for organization support." }
+      ],
+      "caseStudies": [
+        {
+          "number": "01",
+          "title": "Heat Extremes Assessment",
+          "metric": "ETCCDI Indices · 1990-2023",
+          "description": "Assessed Pakistan's 1990 to 2023 heat extremes using ETCCDI indices and remote sensing. Balochistan showed highest heat vulnerability, while pre-monsoon heatwaves dominated nationwide, supporting climate risk assessment, early warning, and resilience planning."
+        },
+        {
+          "number": "02",
+          "title": "Environmental Assessment",
+          "metric": "ISO 14001 EMS Audit",
+          "description": "Conducted an environmental assessment for a Sahiwal cattle feed facility against ISO 14001 EMS requirements, identifying operational impacts and recommending improvements in resource efficiency, waste management, pollution prevention, and regulatory compliance."
+        },
+        {
+          "number": "03",
+          "title": "Drought Assessment",
+          "metric": "SPI & RDI Meteorological Indices",
+          "description": "Assessed Southern Pakistan's 1990 to 2023 drought using meteorological and satellite data with SPI and RDI. The study area showed persistent mild to moderate drought and recurring heatwaves. The findings helped improve drought monitoring, water management, and climate adaptation."
+        }
+      ],
+      "whyChooseUs": [
+        "Expert team with diverse domain knowledge",
+        "State-of-the-art tools and technologies",
+        "High accuracy and quality solutions",
+        "Timely delivery and scalable solutions",
+        "Customer-focused and results-driven"
+      ],
+      "industriesServed": ["Government", "NGOs", "Environment", "Energy"],
+      "metaTags": {
+        "title": "Corporate Capabilities & GIS Solutions (2026) | SpatioCore Tech",
+        "description": "Review SpatioCore Tech's official 2026 capabilities brochure in precision GIS, remote sensing, and environmental mapping.",
+        "ogTitle": "Official Corporate Brochure 2026 – SpatioCore Tech",
+        "ogDescription": "Explore our official capabilities brochure: satellite remote sensing, GIS analysis, and environmental assessment case studies.",
+        "ogImage": "/images/default-lander-preview.svg",
+        "ogType": "article",
+        "twitterCard": "summary_large_image",
+        "robots": "noindex, nofollow"
+      }
+    },
+    {
+      "id": "remote-sensing-sar-guide",
+      "folder": "technical",
+      "fileName": "Remote_Sensing_SAR_Guide.pdf",
+      "filePath": "/OfficialPDF/technical/Remote_Sensing_SAR_Guide.pdf",
+      "title": "Satellite Remote Sensing & SAR Guide",
+      "subtitle": "Precision Radar, Multispectral & Thermal Analytics",
+      "category": "Technical Guide",
+      "status": "coming_soon",
+      "isComingSoon": true,
+      "blur": true,
+      "blurAmount": "25%",
+      "pages": 18,
+      "fileSize": "4.8 MB",
+      "releaseDate": "Q3 2026",
+      "tags": ["Remote Sensing", "SAR", "Google Earth Engine", "Satellites"],
+      "description": "Detailed specification guide on radar-based SAR processing for all-weather monitoring, multispectral classification, and cloud-penetrating change detection.",
+      "highlights": [
+        "Synthetic Aperture Radar (SAR) all-weather monitoring",
+        "Multispectral land-use & vegetation index (NDVI/EVI)",
+        "Automated time-series change detection algorithms",
+        "High-resolution DEM & surface deformation tracking"
+      ],
+      "tableOfContents": [
+        "Sensor Specifications & Constellations",
+        "SAR Coherence & Polarimetric Analysis",
+        "Automated Optical Pre-processing",
+        "Cloud Processing via Google Earth Engine",
+        "Field Validation & Ground Truthing"
+      ],
+      "metaTags": {
+        "title": "Satellite Remote Sensing & SAR Guide | SpatioCore Tech",
+        "description": "Upcoming technical specification guide on radar-based SAR processing and multispectral classification.",
+        "ogTitle": "Satellite Remote Sensing & SAR Guide – SpatioCore Tech",
+        "ogDescription": "Upcoming technical specification guide on radar-based SAR processing and cloud computing.",
+        "ogImage": "/images/default-lander-preview.svg",
+        "ogType": "article",
+        "twitterCard": "summary_large_image",
+        "robots": "noindex, nofollow"
+      }
+    },
+    {
+      "id": "environmental-carbon-brief",
+      "folder": "environmental",
+      "fileName": "Environmental_GIS_Carbon_Brief.pdf",
+      "filePath": "/OfficialPDF/environmental/Environmental_GIS_Carbon_Brief.pdf",
+      "title": "Environmental GIS & Carbon Accounting",
+      "subtitle": "EIA Mapping, Watershed Analytics & Climate Resilience",
+      "category": "Environmental",
+      "status": "coming_soon",
+      "isComingSoon": true,
+      "blur": true,
+      "blurAmount": "25%",
+      "pages": 16,
+      "fileSize": "3.9 MB",
+      "releaseDate": "Q4 2026",
+      "tags": ["Environment", "Carbon Credits", "EIA", "Hydrology"],
+      "description": "Executive brief covering regulatory EIA spatial compliance, forest biomass calculation, blue carbon mapping, and flood hazard predictive modeling.",
+      "highlights": [
+        "Regulatory Environmental Impact Assessment mapping",
+        "Above-ground biomass & carbon stock quantification",
+        "Watershed delineation & flow accumulation modeling",
+        "Climate vulnerability & landslide susceptibility maps"
+      ],
+      "tableOfContents": [
+        "Global Environmental Standards Compliance",
+        "Carbon Stock Modeling Methodology",
+        "Watershed & Catchment Spatial Modeling",
+        "Hazard Zonation & Community Protection"
+      ],
+      "metaTags": {
+        "title": "Environmental GIS & Carbon Accounting | SpatioCore Tech",
+        "description": "Upcoming executive brief covering regulatory EIA spatial compliance and carbon stock modeling.",
+        "ogTitle": "Environmental GIS & Carbon Accounting – SpatioCore Tech",
+        "ogDescription": "Upcoming executive brief covering regulatory EIA spatial compliance, forest biomass calculation, and flood hazard mapping.",
+        "ogImage": "/images/default-lander-preview.svg",
+        "ogType": "article",
+        "twitterCard": "summary_large_image",
+        "robots": "noindex, nofollow"
+      }
+    },
+    {
+      "id": "drone-lidar-surveying-brief",
+      "folder": "surveying",
+      "fileName": "Drone_LiDAR_Surveying_Brief.pdf",
+      "filePath": "/OfficialPDF/surveying/Drone_LiDAR_Surveying_Brief.pdf",
+      "title": "Drone LiDAR & High-Precision Surveying",
+      "subtitle": "Centimeter-Level Topography & 3D Point Cloud Modeling",
+      "category": "Surveying & Topography",
+      "status": "coming_soon",
+      "isComingSoon": true,
+      "blur": true,
+      "blurAmount": "25%",
+      "pages": 14,
+      "fileSize": "5.2 MB",
+      "releaseDate": "Q4 2026",
+      "tags": ["LiDAR", "Drone UAV", "3D Terrain", "Surveying"],
+      "description": "Technical service brief highlighting UAV drone photogrammetry, terrestrial LiDAR scanning, and 3D terrain modeling for civil engineering and mining.",
+      "highlights": [
+        "Centimeter-grade RTK/PPK georeferenced orthomosaics",
+        "Dense LiDAR point cloud classification (ground/vegetation)",
+        "Digital Elevation & Digital Surface Models (DEM/DSM)",
+        "Volumetric calculations for stockpiles and open pits"
+      ],
+      "tableOfContents": [
+        "UAV Platform & Sensor Payload Specs",
+        "Flight Planning & Ground Control Surveying",
+        "Point Cloud Processing & Filtering",
+        "CAD/GIS Integration & Engineering Exports"
+      ],
+      "metaTags": {
+        "title": "Drone LiDAR & High-Precision Surveying | SpatioCore Tech",
+        "description": "Upcoming technical brief highlighting UAV drone photogrammetry and terrestrial LiDAR scanning.",
+        "ogTitle": "Drone LiDAR & High-Precision Surveying – SpatioCore Tech",
+        "ogDescription": "Upcoming technical brief highlighting UAV drone photogrammetry, terrestrial LiDAR scanning, and 3D terrain modeling.",
+        "ogImage": "/images/default-lander-preview.svg",
+        "ogType": "article",
+        "twitterCard": "summary_large_image",
+        "robots": "noindex, nofollow"
+      }
+    }
+  ]
+}

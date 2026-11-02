@@ -76,10 +76,11 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-4 text-sm text-text-base/60">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to="/card" className="hover:text-primary transition-colors text-primary font-semibold">Digital Visiting Cards</Link></li>
+              <li><Link to="/brochures" className="hover:text-primary transition-colors">Brochures</Link></li>
+              <li><Link to="/profiles" className="hover:text-primary transition-colors">Profiles</Link></li>
               <li><a href="/#about" className="hover:text-primary transition-colors">About Us</a></li>
               <li><a href="/#services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="/#portfolio" className="hover:text-primary transition-colors">Portfolio</a></li>
               <li><Link to="/blog" className="hover:text-primary transition-colors font-bold text-primary">Blog</Link></li>
               <li><Link to="/careers" className="hover:text-primary transition-colors font-bold text-accent">Careers</Link></li>
               <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>

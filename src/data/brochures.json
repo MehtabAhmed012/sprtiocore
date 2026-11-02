@@ -1,0 +1,10 @@
+[
+  {
+    "id": "corporate-brochure",
+    "title": "SpatioCore Tech Official Brochure",
+    "subtitle": "GIS, Satellite Remote Sensing & Environmental Solutions",
+    "category": "Corporate Overview",
+    "pdfUrl": "/documents/Brochure.pdf",
+    "description": "Comprehensive corporate brochure detailing SpatioCore Tech's core competencies, satellite data processing pipelines, spatial database design, and global geospatial capabilities."
+  }
+]

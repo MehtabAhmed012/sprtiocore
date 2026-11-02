@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sidra-tul-muntaha",
+    "name": "Sidra Tul Muntaha",
+    "title": "Chief Executive Officer (CEO)",
+    "department": "Executive Leadership & Corporate Strategy",
+    "email": "Insights.spatiocoretech@outlook.com",
+    "phone": "+92 326 5702803",
+    "whatsapp": "https://wa.me/+923265702803",
+    "website": "www.spatiocore.com",
+    "location": "Islamabad, Pakistan / Global Operations",
+    "coordinates": "33.6844° N, 73.0479° E",
+    "badge": "Chief Executive Officer",
+    "isExecutive": true,
+    "themeColor": "teal",
+    "bio": "Chief Executive Officer of SpatioCore Tech. Directing international corporate strategy, institutional partnerships, enterprise GIS agreements, and executive governance.",
+    "specialties": [
+      "Corporate Strategy",
+      "Enterprise Governance",
+      "Global Geospatial Partnerships",
+      "Strategic Expansion"
+    ],
+    "linkedin": "https://www.linkedin.com/company/spatiocoretech",
+    "facebook": "https://www.facebook.com/spatiocoretech"
+  },
+  {
+    "id": "mehtab-ahmed",
+    "name": "Mehtab Ahmed",
+    "title": "Chief Operating Officer (COO)",
+    "department": "Executive & Spatial Operations",
+    "email": "Insights.spatiocoretech@outlook.com",
+    "phone": "+92 326 5702803",
+    "whatsapp": "https://wa.me/+923265702803",
+    "website": "www.spatiocore.com",
+    "location": "Islamabad, Pakistan / Global Operations",
+    "coordinates": "33.6844° N, 73.0479° E",
+    "badge": "Chief Operating Officer",
+    "isExecutive": true,
+    "themeColor": "teal",
+    "bio": "Chief Operating Officer and Lead Geospatial Architect. Directing end-to-end spatial operations, satellite remote sensing pipelines, enterprise GIS infrastructure, and earth observation initiatives.",
+    "specialties": [
+      "Spatial Operations",
+      "Satellite Remote Sensing",
+      "Enterprise GIS Architecture",
+      "SAR Processing"
+    ],
+    "linkedin": "https://www.linkedin.com/company/spatiocoretech",
+    "facebook": "https://www.facebook.com/spatiocoretech"
+  }
+]

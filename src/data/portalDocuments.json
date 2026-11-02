@@ -1,0 +1,36 @@
+{
+  "brochure": {
+    "id": "spatiocore-brochure-2026",
+    "buttonLabel": "Corporate Brochure",
+    "viewLabel": "View Brochure (Read-Only)",
+    "badge": "Official Brochure",
+    "title": "SpatioCore Corporate Brochure",
+    "subtitle": "Enterprise Geospatial Intelligence & Earth Observation Solutions",
+    "description": "Official corporate brochure detailing SpatioCore Tech's core competencies, satellite remote sensing pipelines, spatial geodatabase design, and international project benchmarks.",
+    "fileLink": "/assets/aistudio/Brochure_eea091bf.pdf",
+    "oneDriveEmbedUrl": "https://onedrive.live.com/embed?resid=BROCHURE_SPATIOCORE_2026&em=2&wdStartOn=1",
+    "ogImage": "https://spatiocoretech.com/images/og-documents/og-spatiocore-brochure.jpg",
+    "fileSize": "2.1 MB",
+    "pages": 2,
+    "lastUpdated": "2026 Edition",
+    "category": "Corporate Overview",
+    "viewOnly": true
+  },
+  "profile": {
+    "id": "spatiocore-company-profile",
+    "buttonLabel": "Company Profile",
+    "viewLabel": "View Profile (Read-Only)",
+    "badge": "Official Company Profile",
+    "title": "SpatioCore Tech Company Profile",
+    "subtitle": "Organizational Governance, Certifications & Credentials",
+    "description": "Official corporate profile detailing organizational governance, technical board leadership, ISO certifications, partner credentials, and global capabilities.",
+    "fileLink": "/assets/aistudio/Profile_1d0b6237.pdf",
+    "oneDriveEmbedUrl": "https://onedrive.live.com/embed?resid=PROFILE_SPATIOCORE_2026&em=2&wdStartOn=1",
+    "ogImage": "https://spatiocoretech.com/images/og-documents/og-spatiocore-profile.jpg",
+    "fileSize": "3.6 MB",
+    "pages": 16,
+    "lastUpdated": "2026 Edition",
+    "category": "Institutional Dossier",
+    "viewOnly": true
+  }
+}

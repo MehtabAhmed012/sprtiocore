@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -18,7 +18,6 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Sectors from './components/Sectors';
 import WhyChooseUs from './components/WhyChooseUs';
-import Team from './components/Team';
 import Tools from './components/Tools';
 import Blog from './components/Blog';
 import BlogEditor from './components/BlogEditor';
@@ -32,6 +31,13 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import QuoteModal from './components/QuoteModal';
 import { NotFound, Forbidden, NotImplemented, ServerError } from './components/ErrorPages';
+
+// Public Identity Portal Components
+import PortalHome from './components/portal/PortalHome';
+import BusinessCardsPage from './components/portal/BusinessCardsPage';
+import BrochuresPage from './components/portal/BrochuresPage';
+import ProfilesPage from './components/portal/ProfilesPage';
+import DirectVisitingCard from './components/portal/DirectVisitingCard';
 
 function ScrollToAnchor() {
   const location = useLocation();
@@ -61,9 +67,7 @@ function SPAQueryRouter() {
     const params = new URLSearchParams(window.location.search);
     const goto = params.get('goto');
     if (goto) {
-      // Strips out ?goto=... in the browser's address bar instantly
       window.history.replaceState(null, '', goto);
-      // Perform SPA route transition
       navigate(goto, { replace: true });
     }
   }, [navigate]);
@@ -71,9 +75,27 @@ function SPAQueryRouter() {
   return null;
 }
 
-function MainLandingPage({ onOpenQuote }: { onOpenQuote: () => void }) {
+function CorporateLayout({
+  children,
+  onOpenQuote
+}: {
+  children: ReactNode;
+  onOpenQuote: () => void;
+}) {
   return (
     <>
+      <Navbar onOpenQuote={onOpenQuote} />
+      <div className="min-h-screen">
+        {children}
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+function MainLandingPage({ onOpenQuote }: { onOpenQuote: () => void }) {
+  return (
+    <CorporateLayout onOpenQuote={onOpenQuote}>
       <Hero onOpenQuote={onOpenQuote} />
       <Tools />
       <About />
@@ -81,9 +103,8 @@ function MainLandingPage({ onOpenQuote }: { onOpenQuote: () => void }) {
       <Portfolio />
       <Sectors />
       <WhyChooseUs />
-      {/* <Team /> */}
       <Contact />
-    </>
+    </CorporateLayout>
   );
 }
 
@@ -124,22 +145,109 @@ export default function App() {
                 style={{ scaleX }}
               />
 
-              <Navbar onOpenQuote={() => setIsQuoteModalOpen(true)} />
-              
               <Routes>
+                {/* Main Corporate Landing Page (Default on open) */}
                 <Route path="/" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/careers" element={<Careers />} />
-                <Route path="/careers/:jobId" element={<JobDetails />} />
+                <Route path="/company" element={<MainLandingPage onOpenQuote={() => setIsQuoteModalOpen(true)} />} />
+                <Route path="/about" element={<Navigate to="/#about" replace />} />
+                <Route path="/services" element={<Navigate to="/#services" replace />} />
+                <Route path="/portfolio" element={<Navigate to="/#portfolio" replace />} />
+                <Route path="/contact" element={<Navigate to="/#contact" replace />} />
+
+                {/* Official Public Identity Portal Routes (Direct URLs for Browser Address Bar & QR Scanning) */}
+                <Route path="/portal" element={<PortalHome />} />
+                <Route path="/identity" element={<PortalHome />} />
+                <Route path="/qr" element={<PortalHome />} />
+
+                {/* Business Cards & Visiting Cards Public Routes */}
+                <Route path="/business-cards" element={<BusinessCardsPage />} />
+                <Route path="/business-card" element={<BusinessCardsPage />} />
+                <Route path="/cards" element={<BusinessCardsPage />} />
+                <Route path="/visiting-cards" element={<BusinessCardsPage />} />
+                <Route path="/visitingcards" element={<BusinessCardsPage />} />
+                <Route path="/card" element={<DirectVisitingCard />} />
+                <Route path="/card/:id" element={<DirectVisitingCard />} />
+                <Route path="/card/ceo" element={<DirectVisitingCard defaultCardId="sidra-tul-muntaha" />} />
+                <Route path="/card/coo" element={<DirectVisitingCard defaultCardId="mehtab-ahmed" />} />
+                <Route path="/visiting-card" element={<DirectVisitingCard />} />
+                <Route path="/visitingcard" element={<DirectVisitingCard />} />
+                <Route path="/visiting-card/:id" element={<DirectVisitingCard />} />
+                <Route path="/vcard" element={<DirectVisitingCard />} />
+                <Route path="/vcard/:id" element={<DirectVisitingCard />} />
+                <Route path="/vcards" element={<BusinessCardsPage />} />
+
+                {/* Brochures Public Direct URLs */}
+                <Route path="/brochures" element={<BrochuresPage />} />
+                <Route path="/brochure" element={<BrochuresPage />} />
+                <Route path="/corporate/brochure" element={<BrochuresPage />} />
+                <Route path="/corporate-brochure" element={<BrochuresPage />} />
+                <Route path="/catalog" element={<BrochuresPage />} />
+
+                {/* Profiles & Corporate Profiles Public Direct URLs */}
+                <Route path="/profiles" element={<ProfilesPage />} />
+                <Route path="/profile" element={<ProfilesPage />} />
+                <Route path="/corporate/profile" element={<ProfilesPage />} />
+                <Route path="/corporate/profie" element={<ProfilesPage />} />
+                <Route path="/corporate-profile" element={<ProfilesPage />} />
+                <Route path="/company-profile" element={<ProfilesPage />} />
+
+                {/* Subpages with Corporate Header & Footer */}
+                <Route 
+                  path="/blog" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><Blog /></div>
+                    </CorporateLayout>
+                  } 
+                />
+                <Route 
+                  path="/blog/:slug" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><BlogPost /></div>
+                    </CorporateLayout>
+                  } 
+                />
+                <Route 
+                  path="/careers" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><Careers /></div>
+                    </CorporateLayout>
+                  } 
+                />
+                <Route 
+                  path="/careers/:jobId" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><JobDetails /></div>
+                    </CorporateLayout>
+                  } 
+                />
                 <Route path="/internship" element={<Navigate to="/careers" replace />} />
-                <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<TermsOfService />} />
+                <Route 
+                  path="/privacy" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><PrivacyPolicy /></div>
+                    </CorporateLayout>
+                  } 
+                />
+                <Route 
+                  path="/terms" 
+                  element={
+                    <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                      <div className="pt-20"><TermsOfService /></div>
+                    </CorporateLayout>
+                  } 
+                />
                 <Route 
                   path="/admin" 
                   element={
                     <ProtectedRoute requireAdmin>
-                      <BlogEditor />
+                      <CorporateLayout onOpenQuote={() => setIsQuoteModalOpen(true)}>
+                        <div className="pt-20"><BlogEditor /></div>
+                      </CorporateLayout>
                     </ProtectedRoute>
                   } 
                 />
@@ -150,8 +258,6 @@ export default function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
 
-              <Footer />
-
               <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
 
               {/* Back to Top */}
@@ -160,6 +266,7 @@ export default function App() {
                 className={`fixed bottom-8 right-8 p-4 bg-primary text-[#0a0f1e] rounded-full shadow-[0_10px_25px_rgba(0,201,167,0.3)] z-40 transition-all duration-300 ${
                   showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                 }`}
+                aria-label="Scroll to top"
               >
                 <ArrowUp size={24} />
               </button>
