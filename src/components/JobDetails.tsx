@@ -23,7 +23,8 @@ import {
   Check,
   Map,
   FileText,
-  ArrowLeft
+  ArrowLeft,
+  ExternalLink
 } from 'lucide-react';
 
 // Import jobs data directly
@@ -223,13 +224,25 @@ ${applicantName || '[Your Full Name]'}
             transition={{ delay: 0.4 }}
             className="flex flex-wrap gap-4 pt-4 justify-center"
           >
-            <button 
-              onClick={() => setIsModalOpen(false)}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer animate-shimmer"
-              id="job-apply-now-btn"
-            >
-              Close <ArrowRight size={16} />
-            </button>
+            {(job as any).applyNowLink || (job as any).applicationLink ? (
+              <a 
+                href={(job as any).applyNowLink || (job as any).applicationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer animate-shimmer"
+                id="job-apply-now-btn"
+              >
+                {(job as any).applyNowText || "Apply Now"} <ExternalLink size={16} />
+              </a>
+            ) : (
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#0a0f1e] px-8 py-4 rounded-lg font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_4px_15px_rgba(0,201,167,0.3)] cursor-pointer animate-shimmer"
+                id="job-apply-now-btn"
+              >
+                Apply Now <ArrowRight size={16} />
+              </button>
+            )}
           </motion.div>
         </div>
       </section>
@@ -472,12 +485,23 @@ ${applicantName || '[Your Full Name]'}
                 <p className="font-mono text-[9px] text-text-muted uppercase tracking-wider">ACTIVE VACANCY</p>
                 <p className="text-xs font-bold text-text-base">{job.title}</p>
               </div>
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="bg-primary hover:bg-primary/90 text-[#0a0f1e] px-4 py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider transition-all cursor-pointer"
-              >
-                Apply Now
-              </button>
+              {(job as any).applyNowLink || (job as any).applicationLink ? (
+                <a 
+                  href={(job as any).applyNowLink || (job as any).applicationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary hover:bg-primary/90 text-[#0a0f1e] px-4 py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider transition-all inline-flex items-center gap-1.5"
+                >
+                  {(job as any).applyNowText || "Apply Now"} <ExternalLink size={12} />
+                </a>
+              ) : (
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-primary hover:bg-primary/90 text-[#0a0f1e] px-4 py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider transition-all cursor-pointer"
+                >
+                  Apply Now
+                </button>
+              )}
             </div>
           </motion.div>
         )}

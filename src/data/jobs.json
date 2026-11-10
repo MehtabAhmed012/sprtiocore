@@ -95,5 +95,123 @@
         "a": "Yes! Your geospatial portfolio mapping deliverables will be evaluated by SpatioCore Tech's Senior Consultants. You will receive precise technical reviews and certificate feedback upon program completion."
       }
     ]
+  },
+  {
+    "id": "campus-ambassador-2026",
+    "title": "Campus Ambassador Program",
+    "program": "Spatiocore Tech Campus Ambassador Program 2026",
+    "category": "Campus Ambassador",
+    "organization": "Spatiocore Tech",
+    "location": "Islamabad, Pakistan",
+    "eligibility": "Only students enrolled at Islamabad-based universities are eligible to apply.",
+    "deadline": "November 22, 2026",
+    "duration": "Annual Cohort 2026",
+    "compensation": "Campus Leadership Role",
+    "capacity": "Islamabad Universities",
+    "programWorkspace": "Islamabad Universities | Campus Ambassador Program 2026",
+    "shortDescription": "Represent Spatiocore Tech at your university, connect with fellow students, and become part of a growing geospatial, environmental, and OHS community.",
+    "longDescription": "Spatiocore Tech is inviting enthusiastic, creative, and motivated students from Islamabad-based universities to join its Campus Ambassador Program 2026. Campus Ambassadors will help build awareness of Spatiocore Tech, share opportunities with their university communities, and support student engagement in geospatial, environmental, and Occupational Health and Safety (OHS) fields.",
+    "mission": "Build campus connections and grow the geospatial, environmental, and OHS community.",
+    "tools": "Community Outreach / Campus Events / Digital Platforms",
+    "platform": "Spatiocore Tech Student Network & OHS Forums",
+    "audience": "University students enrolled at Islamabad-based universities only.",
+    "tagline": "Represent. Connect. Lead.",
+    "stats": [
+      {
+        "value": "Islamabad",
+        "label": "Eligible University Location"
+      },
+      {
+        "value": "22 Nov 2026",
+        "label": "Application Deadline"
+      },
+      {
+        "value": "3 Fields",
+        "label": "Geospatial, Environmental & OHS"
+      }
+    ],
+    "learnedSkills": [
+      {
+        "title": "Campus Representation",
+        "description": "Represent Spatiocore Tech and introduce its initiatives and opportunities to your university community.",
+        "icon": "Award",
+        "color": "primary"
+      },
+      {
+        "title": "Student Engagement",
+        "description": "Share program announcements, activities, and relevant opportunities with fellow students.",
+        "icon": "Globe",
+        "color": "secondary"
+      },
+      {
+        "title": "Community Building",
+        "description": "Help connect students interested in geospatial technology, environmental work, and OHS.",
+        "icon": "Satellite",
+        "color": "accent"
+      },
+      {
+        "title": "Communication & Outreach",
+        "description": "Support communication between Spatiocore Tech and your university community.",
+        "icon": "Compass",
+        "color": "secondary"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Build Your Network",
+        "desc": "Connect with students, professionals, and the wider Spatiocore Tech community."
+      },
+      {
+        "title": "Gain Experience",
+        "desc": "Develop leadership, communication, teamwork, and outreach skills through campus engagement."
+      },
+      {
+        "title": "Get Certified",
+        "desc": "Showcase your participation and achievements with a program certificate."
+      },
+      {
+        "title": "Grow Together",
+        "desc": "Become part of an innovative geospatial, environmental, and OHS community."
+      }
+    ],
+    "responsibilities": [
+      {
+        "title": "Campus Representation",
+        "description": "Represent Spatiocore Tech and introduce its initiatives and opportunities to your university community."
+      },
+      {
+        "title": "Student Engagement",
+        "description": "Share program announcements, activities, and relevant opportunities with fellow students."
+      },
+      {
+        "title": "Community Building",
+        "description": "Help connect students interested in geospatial technology, environmental work, and OHS."
+      },
+      {
+        "title": "Communication & Outreach",
+        "description": "Support communication between Spatiocore Tech and your university community."
+      }
+    ],
+    "applyNowText": "Apply Now",
+    "applyNowLink": "https://forms.gle/pb4Yox7SVaGKC1bs9",
+    "applicationLink": "https://forms.gle/pb4Yox7SVaGKC1bs9",
+    "faqs": [
+      {
+        "q": "Who is eligible to apply?",
+        "a": "Only students currently enrolled at universities based in Islamabad are eligible to apply."
+      },
+      {
+        "q": "What is the application deadline?",
+        "a": "Applications must be submitted by November 22, 2026."
+      },
+      {
+        "q": "Which community will Campus Ambassadors be part of?",
+        "a": "Campus Ambassadors will be part of Spatiocore Tech's geospatial, environmental, and Occupational Health and Safety (OHS) community."
+      },
+      {
+        "q": "How can I apply?",
+        "a": "Use the Apply Now button or visit the application form at https://forms.gle/pb4Yox7SVaGKC1bs9."
+      }
+    ]
   }
 ]
